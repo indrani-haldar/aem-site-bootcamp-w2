@@ -1,0 +1,20 @@
+.cmp-header {
+    display: flex;
+    align-items: center;
+}
+.cmp-header__logo-link {
+    display: inline-flex;
+}
+.cmp-header__logo {
+    max-height: 48px;
+}
+.cmp-header__text {
+    margin-left: 1rem;
+}
+.cmp-header__title {
+    margin: 0;
+    font-weight: bold;
+}
+.cmp-header__tagline {
+    margin: 0;
+}

@@ -211,7 +211,7 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container,group:AEM Site Bootcamp W2 - Structure]">
+                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container,group:AEM Site Bootcamp W2 - Structure,group:Bootcamp - Track 1,group:Bootcamp - Track 2,group:Bootcamp - Track 3]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -241,7 +241,7 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container]">
+                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container,group:Bootcamp - Track 1,group:Bootcamp - Track 2,group:Bootcamp - Track 3]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -279,7 +279,7 @@
                     jcr:primaryType="nt:unstructured"
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container]">
+                    components="[group:AEM Site Bootcamp W2 - Content,/apps/aem-site-bootcamp-w2/components/form/container,group:Bootcamp - Track 1,group:Bootcamp - Track 2,group:Bootcamp - Track 3]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
