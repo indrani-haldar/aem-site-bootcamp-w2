@@ -1,0 +1,8 @@
+<div class="cmp-dashboardcard" data-sly-use.model="com.adobe.aem.bootcamp.core.models.DashboardCardModel">
+    <sly data-sly-list.item="${model.items}">
+        <div class="cmp-dashboardcard__card" data-sly-test="${item.valid}">
+            <h3 class="cmp-dashboardcard__title">${item.title}</h3>
+            <div class="cmp-dashboardcard__content">${item.content @ context='html'}</div>
+        </div>
+    </sly>
+</div>
