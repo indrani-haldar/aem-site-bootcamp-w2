@@ -1,0 +1,116 @@
+.search-filter {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 25px;
+}
+
+.search-wrapper {
+    flex: 0 0 35%;
+    min-width: 250px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #623a3a;
+}
+
+.category-filters {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+    margin-left: 8%;
+    margin-right: 5%;
+}
+
+.category-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-chip {
+    flex-shrink: 0;
+    white-space: nowrap;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #222;
+    padding: 12px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.filter-chip:hover {
+    border-color: #623a3a;
+    color: #623a3a;
+}
+
+.filter-chip.active {
+    background: #623a3a !important;
+    border-color: #623a3a !important;
+    color: #ffffff !important;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .search-filter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .search-wrapper {
+        flex: unset;
+        min-width: 100%;
+    }
+
+    .category-filters {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-filter {
+        padding: 20px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .category-filters {
+        width: 100%;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+
+    .filter-chip {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}

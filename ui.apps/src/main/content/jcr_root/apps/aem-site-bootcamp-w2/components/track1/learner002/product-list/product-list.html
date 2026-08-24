@@ -1,0 +1,11 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner002.site'}" />
+<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner002.site'}" />
+
+<section class="shop-product-list">
+    <div class="products-list-container">
+    </div>
+</section>
+<sly data-sly-resource="${'mini-cart' @
+    resourceType='aem-site-bootcamp-w2/components/track1/learner002/mini-cart'}">
+</sly>

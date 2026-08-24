@@ -1,0 +1,18 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner002.site'}" />
+<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner002.site'}" />
+<sly data-sly-use.productGrid="com.adobe.aem.bootcamp.core.models.track1.learner002.ProductGridModel" />
+
+<section class="products-section">
+    <h2 class="products-heading">${productGrid.title}</h2>
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" aria-label="Prev products">
+            &#10094;
+        </button>
+        <div class="products-container">
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Next products">
+            &#10095;
+        </button>
+    </div>
+</section>
