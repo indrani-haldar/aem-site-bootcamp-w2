@@ -2,6 +2,7 @@
 <workspaceFilter version="1.0">
     <filter root="/conf/aem-site-bootcamp-w2" mode="merge"/>
     <filter root="/content/aem-site-bootcamp-w2" mode="merge"/>
+    <filter root="/content/aem-site-bootcamp-w2/track1/learner001-Tania" mode="replace"/>
     <filter root="/content/dam/aem-site-bootcamp-w2" mode="merge">
         <exclude pattern="/content/dam/aem-site-bootcamp-w2(/.*)?"/>
         <include pattern="/content/dam/aem-site-bootcamp-w2/jcr:content(/.*)?"/>

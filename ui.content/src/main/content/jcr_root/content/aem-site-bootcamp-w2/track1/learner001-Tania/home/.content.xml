@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+    <jcr:content cq:template="/conf/aem-site-bootcamp-w2/settings/wcm/templates/track1-learner001-tania" jcr:primaryType="cq:PageContent" jcr:title="ShopFast Home" sling:resourceType="aem-site-bootcamp-w2/components/page">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/container" layout="responsiveGrid">
+            <body jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/container" layout="responsiveGrid">
+                <hero jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/track1/learner001-Tania/hero" heading="Welcome to ShopFast" subtext="Discover amazing products at great prices" ctaLabel="Shop Now" ctaLink="/content/aem-site-bootcamp-w2/track1/learner001-Tania/shop.html" alignment="center"/>
+                <featuredProducts jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/track1/learner001-Tania/shopfastcatalog" mode="featured"/>
+                <promo jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/text" textIsRich="true" text="Why shop with us? Fast delivery, great prices, and products selected for you."/>
+            </body>
+        </root>
+    </jcr:content>
+</jcr:root>
