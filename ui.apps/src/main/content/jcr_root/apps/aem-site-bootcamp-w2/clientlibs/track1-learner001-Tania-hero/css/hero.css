@@ -1,9 +1,0 @@
-.hero { position: relative; min-height: 12rem; padding: 2rem; background-position: center; background-size: cover; color: #fff; }
-.hero::before { position: absolute; inset: 0; background: rgb(24 32 40 / 58%); content: ''; }
-.hero.left { text-align: left; }
-.hero.center { text-align: center; }
-.hero__content { position: relative; z-index: 1; max-width: 60rem; margin: 0 auto; }
-.hero h1 { margin: 0 0 .5rem; font-size: 2rem; }
-.hero p { margin: 0 0 1rem; }
-.hero .btn { display: inline-block; padding: .6rem 1rem; border-radius: 5px; background: #182028; color: #fff; text-decoration: none; }
-@media (max-width: 640px) { .hero { min-height: 10rem; padding: 1.5rem 1rem; } .hero h1 { font-size: 1.6rem; } }

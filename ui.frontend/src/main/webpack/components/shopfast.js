@@ -202,7 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const submit = document.querySelector('form.cmp-form .cmp-form-button');
     if (submit) submit.textContent = 'Send Message';
     const currentPath = window.location.pathname.toLowerCase();
-    document.querySelectorAll('.shopfast-xf-header__nav a').forEach((link) => {
+    document.querySelectorAll('.shopfast-xf-header__nav a, .shopfast-xf-header__nav .cmp-navigation__item-link').forEach((link) => {
+        if (!link.getAttribute('href')) return;
         link.addEventListener('click', (event) => {
             event.preventDefault();
             window.location.assign(link.href);

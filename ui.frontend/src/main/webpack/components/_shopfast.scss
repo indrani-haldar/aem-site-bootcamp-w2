@@ -11,9 +11,18 @@
 }
 
 .shopfast-xf-header { display: flex; align-items: center; gap: 2rem; padding: 1rem 2rem; border-bottom: 1px solid var(--line); color: #182028; font-family: sans-serif; }
+header.experiencefragment:has(.shopfast-xf-header), header.experiencefragment:has(.shopfast-xf-header) .cmp-experiencefragment { margin: 0; padding: 0; border: 0; }
 .shopfast-xf-header__brand { color: #182028; font-weight: 700; letter-spacing: .08em; text-decoration: none; }
 .shopfast-xf-header nav { display: flex; align-self: stretch; gap: .35rem; margin: auto; font-size: .85rem; font-weight: 600; }
+.hero { display: grid; min-height: 16rem; place-items: center; padding: 2rem; background-color: #182028; background-image: linear-gradient(rgb(24 32 40 / 44%), rgb(24 32 40 / 72%)), url('/content/dam/aem-site-bootcamp-w2/asset.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; color: #fff; text-align: center; }
+.hero__content { width: min(100%, 42rem); padding: 1.5rem 2rem; background: rgb(24 32 40 / 72%); }
+.hero__content h1, .hero__content p { margin: 0 0 1rem; }
+.hero__content .btn { display: inline-block; padding: .65rem 1rem; background: #fff; color: #182028; font-family: sans-serif; font-weight: 700; text-decoration: none; }
 .shopfast-xf-header__nav a { display: grid; place-items: center; padding: .25rem .8rem; border: 1px solid transparent; color: #182028; text-decoration: none; }
+.shopfast-xf-header__nav .cmp-navigation__group { display: flex; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.shopfast-xf-header__nav .cmp-navigation__item { display: grid; }
+.shopfast-xf-header__nav .cmp-navigation__item-link { display: grid; place-items: center; padding: .25rem .8rem; color: #182028; text-decoration: none; }
+.shopfast-xf-header__nav .cmp-navigation__item--active .cmp-navigation__item-link { color: #2563eb; text-decoration: underline; text-underline-offset: .35rem; }
 .shopfast-xf-header__nav a.is-active { border-color: #aeb7be; border-bottom-color: #fff; background: #fff; color: #2563eb; text-decoration: underline; text-underline-offset: .35rem; }
 .shopfast-xf-header__nav a[href$='/home.html'] { color: #182028; }
 .shopfast-xf-header__nav a.is-active { color: #2563eb; text-decoration: underline; text-underline-offset: .35rem; }
@@ -23,6 +32,8 @@
 .shopfast-xf-header__cart { border: 1px solid #9da7af; border-radius: 5px; background: #fff; color: #182028; cursor: pointer; padding: .65rem 1rem; font-weight: 600; }
 .shopfast-xf-header__cart span { display: inline-grid; place-items: center; min-width: 1.25rem; height: 1.25rem; margin-left: .3rem; border-radius: 50%; background: #182028; color: #fff; font-size: .7rem; }
 .shopfast-xf-footer { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 1rem; padding: 1rem 2rem; border-top: 1px solid #cbd2d8; background: #f1f3f4; color: #182028; font: .72rem sans-serif; }
+footer.experiencefragment:has(.shopfast-xf-footer), footer.experiencefragment:has(.shopfast-xf-footer) .cmp-experiencefragment { margin: 0; padding: 0; border: 0; }
+.experiencefragment:has(.shopfast-xf-footer) + .aem-Grid-newComponent { display: none; }
 .shopfast-xf-footer div { display: grid; gap: .35rem; }
 .shopfast-xf-footer span { color: #6f7a83; font-size: .65rem; }
 .shopfast-xf-footer a { color: #182028; text-decoration: none; }
@@ -84,7 +95,7 @@ body:has(form.cmp-form) .cmp-form-button { width: 100%; margin-top: .35rem; bord
 .shopfast__checkout { width: 100%; }
 .shopfast__cart-overlay { position: fixed; inset: 0; z-index: 2; display: none; background: rgb(24 32 40 / 20%); }
 .shopfast:has(.shopfast__cart[aria-hidden='false']) .shopfast__cart-overlay { display: block; }
-.shopfast__footer { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 1rem; margin-top: 2rem; border-top: 1px solid var(--line); background: #f1f3f4; font: .72rem sans-serif; }
+.shopfast__footer { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 1rem; margin-top: 0; border-top: 1px solid var(--line); background: #f1f3f4; font: .72rem sans-serif; }
 .shopfast__footer div { display: grid; gap: .35rem; }
 .shopfast__footer span { color: var(--muted); font-size: .65rem; }
 .shopfast__footer a { color: var(--ink); text-decoration: none; }
