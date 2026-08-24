@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+
+<sly data-sly-call="${clientlib.js @ categories='aem-site-bootcamp-w2.addtocartbadge'}" />
+
+<header class="cmp-search-header" data-cmp-is="searchheader">
+
+    <div class="cmp-search-header-logo">
+        SearchHub
+    </div>
+
+    <nav>
+        <a class="cmp-search-header-nav" href="home-page.html">Home</a>
+        <!-- <a class="cmp-search-header-nav" href="search-results-page.html?q=">Search Results</a> -->
+    </nav>
+
+    <div class="cmp-search-header-cart-badge">
+        Cart
+        <span id="cartCount" class="cmp-search-header-cart-count">0</span>
+    </div>
+
+</header>
