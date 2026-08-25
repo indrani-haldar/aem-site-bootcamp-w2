@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @ categories='aem-site-bootcamp-w2.site.hero'}" />
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.models.track1.learner003.HeroDetails" />
+
+<div class="hero ${properties.alignment}">
+    <img
+        data-sly-test="${model.backgroundImage}"
+        class="hero-bg"
+        src="${model.backgroundImage @ context='uri'}"
+        alt=""
+        role="presentation" />
+
+    <div class="hero-content">
+        <h1 data-sly-test="${model.heading}">${model.heading}</h1>
+        <p data-sly-test="${model.subtext}">${model.subtext}</p>
+        <a
+            data-sly-test="${model.ctaLabel && model.ctaLink}"
+            class="hero-cta"
+            href="${model.ctaLink @ context='uri'}">${model.ctaLabel}</a>
+    </div>
+</div>

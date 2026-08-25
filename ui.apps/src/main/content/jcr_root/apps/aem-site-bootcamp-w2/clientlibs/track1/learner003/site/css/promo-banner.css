@@ -1,0 +1,39 @@
+.promo-banner {
+    background: #1e3a8a;
+    padding: 30px 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.promo-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.promo-banner h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.promo-banner p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.promo-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #1e3a8a;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.promo-btn:hover {
+    background: #f5f5f5;
+}

@@ -1,1 +1,0 @@
-console.log("loading product details from dependencies");
