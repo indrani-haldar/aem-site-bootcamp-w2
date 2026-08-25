@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner006.models;
 
 import java.util.ArrayList;
 import java.util.List;

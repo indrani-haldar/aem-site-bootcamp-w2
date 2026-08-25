@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner006.models;
 
 public class TrendingSearchItem {
 

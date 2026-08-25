@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner006.models;
 
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.api.resource.Resource;
