@@ -1,0 +1,19 @@
+<div
+  class="header"
+  data-cmp-is="header"
+  data-sly-use.model="com.adobe.aem.bootcamp.core.models.HeaderModel"
+>
+  <div class="header__logo">SearchHub</div>
+
+  <!-- <nav class="header__nav">
+    <a href="/content/aem-site-bootcamp-w2/us/Learner006/Home.html"> Home </a>
+  </nav> -->
+  <nav class="header__nav">
+    <a href="${model.homeLink}"> ${model.homeText} </a>
+  </nav>
+
+  <div class="header__cart">
+    🛒 Cart:
+    <span class="cart-count">0</span>
+  </div>
+</div>

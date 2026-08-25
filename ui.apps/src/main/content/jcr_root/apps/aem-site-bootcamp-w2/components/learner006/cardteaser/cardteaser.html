@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.models.CardTeaserModel">
+  <div class="cardteaser">
+    <div class="cardteaser__image-container">
+      <img
+        src="${model.imagePath}"
+        alt="${model.imageAlt}"
+        class="cardteaser__image"
+      />
+    </div>
+
+    <div class="cardteaser__body">
+      <h3 class="cardteaser__title">${model.title}</h3>
+
+      <p class="cardteaser__description">${model.description}</p>
+
+      <p class="cardteaser__price">₹${model.price}</p>
+
+      <button type="button" class="cardteaser__btn">${model.ctaLabel}</button>
+    </div>
+  </div>
+</sly>
