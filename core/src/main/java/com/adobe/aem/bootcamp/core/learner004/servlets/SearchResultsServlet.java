@@ -1,0 +1,97 @@
+package com.adobe.aem.bootcamp.core.learner004.servlets;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
+
+import javax.servlet.Servlet;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.osgi.service.component.annotations.Component;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
+@Component(
+        service = Servlet.class,
+        property = {
+                "sling.servlet.paths=/bin/searchhub/results",
+                "sling.servlet.methods=GET"
+        }
+)
+public class SearchResultsServlet extends SlingSafeMethodsServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    private static final String API_URL =
+            "https://fakestoreapi.com/products";
+
+    @Override
+    protected void doGet(
+            SlingHttpServletRequest request,
+            SlingHttpServletResponse response)
+            throws IOException {
+
+        String query = request.getParameter("q");
+
+        URL url = URI.create(API_URL).toURL();
+
+        HttpURLConnection connection =
+                (HttpURLConnection) url.openConnection();
+
+        connection.setRequestMethod("GET");
+
+        BufferedReader reader =
+                new BufferedReader(
+                        new InputStreamReader(
+                                connection.getInputStream()));
+
+        StringBuilder apiResponse =
+                new StringBuilder();
+
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            apiResponse.append(line);
+        }
+
+        reader.close();
+
+        ObjectMapper mapper =
+                new ObjectMapper();
+
+        JsonNode products =
+                mapper.readTree(
+                        apiResponse.toString());
+
+        ArrayNode filteredProducts =
+                mapper.createArrayNode();
+
+        for (JsonNode product : products) {
+
+            String title =
+                    product.path("title")
+                           .asText();
+
+            if (query == null
+                    || query.isBlank()
+                    || title.toLowerCase()
+                            .contains(query.toLowerCase())) {
+
+                filteredProducts.add(product);
+            }
+        }
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        response.getWriter()
+                .write(filteredProducts.toString());
+    }
+}
