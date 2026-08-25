@@ -1,0 +1,12 @@
+<header class="cmp-learner008-header" data-sly-use.model="com.adobe.aem.bootcamp.core.models.Learner008HeaderModel" data-cmp-is="shopfast-header">
+    <a class="cmp-learner008-header__brand" href="${model.homePath}">${model.siteTitle}</a>
+    <nav class="cmp-learner008-header__nav" aria-label="Main navigation">
+        <a href="${model.homePath}">Home</a>
+        <a href="${model.shopPath}">Shop</a>
+        <a href="${model.contactPath}">Contact</a>
+    </nav>
+    <button class="cmp-learner008-header__cart" type="button" data-cmp-hook-shopfast-header="open-cart" aria-label="${model.cartButtonLabel}">
+        ${model.cartButtonLabel}
+        <span class="cmp-learner008-header__badge" data-cmp-hook-shopfast-header="badge" aria-live="polite">0</span>
+    </button>
+</header>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Learner008 Search Filter Bar"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <displayMode
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Display Mode"
+                        name="./displayMode"
+                        value="featured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <catalog jcr:primaryType="nt:unstructured" text="Catalog (Search + Filter + All Products)" value="catalog"/>
+                            <featured jcr:primaryType="nt:unstructured" text="Featured (Top Rated Products Only)" value="featured"/>
+                        </items>
+                    </displayMode>
+                    <featuredLimit
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldLabel="Featured Product Limit"
+                        fieldDescription="Used when Display Mode is Featured"
+                        name="./featuredLimit"
+                        min="1"
+                        value="4"/>
+                    <searchLabel jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Search Label" name="./searchLabel"/>
+                    <searchPlaceholder jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Search Placeholder" name="./searchPlaceholder"/>
+                    <allCategoryLabel jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="All Category Label" name="./allCategoryLabel"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
