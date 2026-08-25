@@ -1,8 +1,3 @@
-// document.querySelectorAll('.site-nav ul li a').forEach((item)=>{
-//     if(item.pathname === window.location.pathname){
-//         item.parentElement.classList.add('active');
-//     }
-// })
 
 const currentPage = window.location.pathname.split('/').pop();
 

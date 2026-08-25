@@ -10,7 +10,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class HeroModel {
  
 
-
     @ValueMapValue
     private String bannerImage;
 

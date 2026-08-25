@@ -7,8 +7,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
  
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class HeroModel {
- 
+public class PromoModel {
 
     @ValueMapValue
     private String promoblockImage;
@@ -27,6 +26,9 @@ public class HeroModel {
 
      @ValueMapValue
     private String benefit14;
+
+    @ValueMapValue
+    private String promoblockImageAlt;
    
  
     public String getPromoblockImage() {
@@ -36,7 +38,7 @@ public class HeroModel {
 
     public String getPromoHeading() {
       
-        return bannerTitle;
+        return promoHeading;
     }
     public String getBenefit1() {
       
@@ -53,7 +55,11 @@ public class HeroModel {
     }
     public String getBenefit4() {
       
-        return benefit4;
+        return benefit14;
+    }
+     public String getPromoblockImageAlt() {
+      
+        return promoblockImageAlt;
     }
     
 }

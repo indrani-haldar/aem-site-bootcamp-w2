@@ -1,8 +1,5 @@
 const contactFormData = {};
 
-// const successModal = document.getElementById('successModal');
-// const closeModalBtn = document.getElementById('closeModal');
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.new.newpar.section.aem-Grid-newComponent').forEach(element => {
       element.style.display = 'none';
