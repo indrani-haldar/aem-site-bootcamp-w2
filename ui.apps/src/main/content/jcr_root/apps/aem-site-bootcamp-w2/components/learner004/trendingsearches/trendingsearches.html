@@ -1,0 +1,17 @@
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner004.models.TrendingSearchesModel">
+    <div class="cmp-trending-searches" data-cmp-is="trendingsearches">
+        <h3 class="cmp-trending-searches__title">
+            Trending Searches
+        </h3>
+        <div class="cmp-trending-searches__chips">
+
+            <sly data-sly-list="${model.trendingSearches}">
+                <a class="cmp-trending-searches__chip" href="search-results-page.html?q=${item.query}">
+                    ${item.label}
+                </a>
+            </sly>
+
+        </div>
+    </div>
+
+</sly>
