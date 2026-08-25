@@ -1,0 +1,36 @@
+<footer class="footer mt-20">
+
+    <section class="col-3">
+        <span class="footer-logo">${properties.companyLogo}</span>        
+    </section>
+
+    <section class="col-3 ">
+        <h5>Navigate</h5>
+        <ul>
+            <li><a>${properties.home}</a></li>
+            <li><a>${properties.shop}</a></li>
+        </ul>
+    </section>
+
+    <section class="col-3 ">
+        <h5>Resources</h5>
+        <ul>
+            <li><a>${properties.resource}</a></li>
+        </ul>
+    </section>
+
+    <section class="col-3 ">
+        <h5>Contact</h5>
+        <ul>
+            <li><a>${properties.linkedin}</a></li>
+        </ul>
+    </section>
+
+    <section class="col-12 footer-bottom mt-20 top-border">
+        <p>&copy; <span id="year"></span> ${properties.copyright}</p>
+    </section>
+
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>

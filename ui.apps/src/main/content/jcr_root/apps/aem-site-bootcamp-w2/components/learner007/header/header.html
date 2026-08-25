@@ -1,0 +1,95 @@
+<header class="site-header">
+    <div class="site-logo" aria-label="Go to Home">
+        <a href="/content/aem-site-bootcamp-w2/us/learner007/home.html" data-path="/content/aem-site-bootcamp-w2/us/learner007/home">
+        <img class="header-logo" src="/content/dam/aem-site-bootcamp-w2/learner007/shopfast_logo.jpg"
+            alt="ShopFast Site" />
+            </a>
+
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li>
+                <a href="/content/aem-site-bootcamp-w2/us/learner007/home.html"
+                    data-path="/content/aem-site-bootcamp-w2/us/learner007/home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/content/aem-site-bootcamp-w2/us/learner007/shop.html"
+                    data-path="/content/aem-site-bootcamp-w2/us/learner007/shop">
+                    Shop
+                </a>
+            </li>
+
+            <li>
+                <a href="/content/aem-site-bootcamp-w2/us/learner007/contact.html"
+                    data-path="/content/aem-site-bootcamp-w2/us/learner007/contact">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="cart">
+        Cart
+        <span class="count" name="cart-count">0</span>
+    </div>
+    <div class="cart-overlay"></div>
+    <div class="cart-popup hidden">
+        <div class="cart-popup-header">
+            <h6>Your Cart <span name="product-count"></span></h6>
+            <button type="button" class="close-btn" aria-label="Close">✕</button>
+        </div>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-footer">
+            <span class="subtotal">Subtotal</span>
+            <span class="subtotal text-right" name="cart-total-amount" aria-live="polite">$0</span>
+            <button type="button" class="checkout-btn" aria-label="Proceed to checkout">Checkout</button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- Common Modal -->
+<d<div
+    id="successModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-describedby="modalDescription"
+    aria-hidden="true">
+
+    <div class="modal__content">
+
+        <div
+            id="modalIcon"
+            class="modal__icon"
+            aria-hidden="true">
+        </div>
+
+        <h2
+            id="modalTitle"
+            class="modal__title"
+            tabindex="-1">
+        </h2>
+
+        <p
+            id="modalDescription"
+            class="modal__description">
+        </p>
+
+        <button
+            type="button"
+            id="closeModal"
+            class="modal__button"
+            aria-label="Close dialog">
+            Close
+        </button>
+
+    </div>
+</div>

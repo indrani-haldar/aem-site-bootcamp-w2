@@ -1,0 +1,20 @@
+(function () {
+
+    function initPromoBanner() {
+        const promoBanner = document.querySelector('.promo-block');
+
+        if (!promoBanner || !promoBanner.dataset.bannerImage) {
+            return;
+        }
+
+        promoBanner.style.backgroundImage =
+            `url('${promoBanner.dataset.bannerImage}')`;
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPromoBanner);
+    } else {
+        initPromoBanner();
+    }
+
+})();
