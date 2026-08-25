@@ -1,0 +1,12 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='learner005.addtocartbadge'}" />
+    
+<div class="header-nav">
+    <div class="cart-container">
+        <div class="cart-badge">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-text">Cart</span>
+            <span id="cart-count" class="cart-count">0</span>
+        </div>
+    </div>
+</div>

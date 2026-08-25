@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner005.models.TrendingSearchesModel" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @ categories='learner005.trendingsearches'}"/>
+
+<div class="cmp-trending-searches" data-cmp-is="trendingsearches">
+
+    <h3 class="cmp-trending-searches__title">
+        Trending Searches
+    </h3>
+
+    <div class="cmp-trending-searches__chips">
+
+        <sly data-sly-list.item="${model.trendingSearches}">
+
+            <a class="cmp-trending-searches__chip"
+                href="/content/aem-site-bootcamp-w2/us/learner005/search-results.html?q=${item.query}">
+                ${item.label}
+            </a>
+
+
+       </sly>
+
+    </div>
+
+</div>

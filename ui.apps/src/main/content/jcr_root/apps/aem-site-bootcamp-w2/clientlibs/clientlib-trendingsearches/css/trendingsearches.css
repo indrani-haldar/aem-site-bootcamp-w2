@@ -1,0 +1,27 @@
+
+
+.cmp-trending-searches {
+    text-align: center;
+    padding: 40px;
+}
+
+.cmp-trending-searches__chips {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cmp-trending-searches__chip {
+    text-decoration: none;
+    background: #f4f4f4;
+    color: #222 !important;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+
+.cmp-trending-searches__chip:hover {
+    background: #e5e5e5;
+}
