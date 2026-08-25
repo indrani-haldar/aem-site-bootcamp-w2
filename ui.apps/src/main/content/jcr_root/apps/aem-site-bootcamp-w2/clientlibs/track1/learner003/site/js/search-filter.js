@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             filterContainer.innerHTML +=
                 `<button
                     class="filter-chip"
+                    type="button"
                     data-category="${category}"
-                    aria-label="Filter Option"
+                    aria-label="Filter by ${displayName}"
+                    aria-pressed="false"
                 >
                     ${displayName}
                 </button>`;
@@ -52,6 +54,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 selectedCategories = ["all"];
             }
         }
+        filterButtons.forEach(btn => {
+            btn.setAttribute("aria-pressed", btn.classList.contains("active") ? "true" : "false");
+        });
         document.dispatchEvent(new CustomEvent("shopFilterChanged", {
             detail: {
                 searchText: searchInput?.value || "",

@@ -9,7 +9,12 @@ window.addEventListener("load", updateCartCount);
 
 document.addEventListener("click", (event) => {
     if (event.target.closest(".cart-btn")) {
-        document.querySelector(".mini-cart-overlay")?.classList.add("show");
+        const miniCart = document.querySelector(".mini-cart-overlay");
+        if (typeof openDialog === "function") {
+            openDialog(miniCart);
+        } else {
+            miniCart?.classList.add("show");
+        }
         if (typeof renderMiniCart === "function") {
             renderMiniCart();
         }

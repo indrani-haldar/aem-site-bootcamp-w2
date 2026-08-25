@@ -1,1 +1,0 @@
-console.log("loading hero details from dependencies");

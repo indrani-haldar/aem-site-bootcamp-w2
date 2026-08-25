@@ -1,9 +1,8 @@
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
-<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner003.site'}" />
-<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner003.site'}" />
-
 <section class="shop-product-list">
-    <div class="products-list-container">
+    <div class="products-list-container" aria-live="polite">
+        <p class="products-loading" role="status">
+            Loading products...
+        </p>
     </div>
 </section>
 <sly data-sly-resource="${'mini-cart' @

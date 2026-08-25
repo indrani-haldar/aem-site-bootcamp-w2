@@ -8,7 +8,7 @@
                 ${properties.description}
             </p>
         </div>
-        <form class="contact-form" aria-labelledby="contact-title">
+        <form class="contact-form" aria-labelledby="contact-title" novalidate>
             <div class="form-group">
                 <label for="name">
                     Name
@@ -28,8 +28,7 @@
                 <label for="message">
                     Message
                 </label>
-                <textarea id="message" rows="6" placeholder="Enter your message" required aria-required="true">
-                </textarea>
+                <textarea id="message" rows="6" placeholder="Enter your message" required aria-required="true"></textarea>
             </div>
             <button type="submit" class="contact-submit-btn" aria-label="Send Message">
                 Send Message

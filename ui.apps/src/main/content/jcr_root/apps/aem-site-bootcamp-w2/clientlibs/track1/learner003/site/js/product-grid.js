@@ -30,9 +30,7 @@ window.addEventListener("load", async () => {
     try {
         const response = await fetch("/bin/shopfast/products");
         const products = await response.json();
-        debugger
         const productLists = products.products;
-        console.log(productLists)
         const randomProducts = productLists.slice(0, 20);
         let currentIndex = 0;
         const cardsPerView = 4;

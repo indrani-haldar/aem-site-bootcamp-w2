@@ -11,6 +11,7 @@ document.addEventListener("submit", (event) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     emailError.textContent = "";
     emailInput.classList.remove("input-error");
+    emailInput.setAttribute("aria-invalid", "false");
     if (!name) {
         alert("Please enter your name.");
         return;
@@ -18,6 +19,7 @@ document.addEventListener("submit", (event) => {
     if (!emailRegex.test(email)) {
         emailError.textContent = "Please enter a valid email address.";
         emailInput.classList.add("input-error");
+        emailInput.setAttribute("aria-invalid", "true");
         return;
     }
     if (!message) {

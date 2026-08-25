@@ -31,22 +31,26 @@
     text-transform: uppercase;
 }
 
-.footer-column ul {
+.footer-column ul,
+.footer-column .cmp-navigation__group {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-column li {
+.footer-column li,
+.footer-column .cmp-navigation__item {
     margin-bottom: 8px;
 }
 
-.footer-column a {
+.footer-column a,
+.footer-column .cmp-navigation__item-link {
     text-decoration: none;
     color: #374151;
 }
 
-.footer-column a:hover {
+.footer-column a:hover,
+.footer-column .cmp-navigation__item-link:hover {
     color: #1e3a8a;
 }
 

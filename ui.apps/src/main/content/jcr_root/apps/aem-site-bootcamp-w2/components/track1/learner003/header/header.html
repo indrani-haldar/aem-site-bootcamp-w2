@@ -1,21 +1,17 @@
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
-<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner003.site'}" />
-<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner003.site'}" />
-
 <header class="shopfast-header">
     <div class="logo">
         SHOPFAST
     </div>
-    <nav class="header-nav">
-        <a href="/content/aem-site-bootcamp-w2/us/Learner003/Home.html">
-            Home
-        </a>
-        <a href="/content/aem-site-bootcamp-w2/us/Learner003/shop.html">
-            Shop
-        </a>
-        <a href="/content/aem-site-bootcamp-w2/us/Learner003/Contact.html">
-            Contact
-        </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+        <sly data-sly-list.navItem="${currentPage.parent.listChildren}">
+            <a
+                data-sly-test="${!navItem.hideInNav}"
+                class="${navItem.path == currentPage.path ? 'active' : ''}"
+                href="${navItem.path @ extension='html', context='uri'}"
+                aria-current="${navItem.path == currentPage.path ? 'page' : ''}">
+                ${navItem.navigationTitle || navItem.pageTitle || navItem.title}
+            </a>
+        </sly>
     </nav>
     <button class="cart-btn" type="button" aria-label="Cart">
         <span class="cart-icon" aria-hidden="true">

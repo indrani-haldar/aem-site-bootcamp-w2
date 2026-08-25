@@ -5,11 +5,15 @@ window.addEventListener("load", async () => {
     if (!container) {
         return;
     }
-    const response = await fetch("/bin/shopfast/products");
-    const products = await response.json();
-    allProducts = products.products;
-    productsContainer = container;
-    renderProducts(allProducts, productsContainer);
+    try {
+        const response = await fetch("/bin/shopfast/products");
+        const products = await response.json();
+        allProducts = products.products;
+        productsContainer = container;
+        renderProducts(allProducts, productsContainer);
+    } catch (error) {
+        container.innerHTML = `<p class="products-loading" role="status">Unable to load products.</p>`;
+    }
 });
 
 function getStarRating(rating, maxStars = 5) {
@@ -27,9 +31,11 @@ function getStarRating(rating, maxStars = 5) {
 }
 
 function renderProducts(allProducts, container) {
+    if (!container) {
+        return;
+    }
     container.innerHTML = "";
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    debugger
     allProducts.forEach(product => {
         const cartItem = cart.find(item => item.id == product.id);
         const buttonHtml = cartItem ?
@@ -152,7 +158,6 @@ function updateCartCount() {
 }
 
 document.addEventListener("shopFilterChanged", (event) => {
-    console.log(event.detail.categories);
     const searchText = event.detail.searchText.toLowerCase().trim();
     const selectedCategories = event.detail.categories || ["all"];
     let filteredProducts = [...allProducts];

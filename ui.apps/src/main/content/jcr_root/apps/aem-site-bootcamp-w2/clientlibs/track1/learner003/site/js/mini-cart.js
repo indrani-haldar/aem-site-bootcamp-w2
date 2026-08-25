@@ -1,4 +1,17 @@
 window.addEventListener("load", renderMiniCart);
+
+function openDialog(dialog) {
+    if (!dialog) {
+        return;
+    }
+    dialog.classList.add("show");
+    dialog.querySelector("button")?.focus();
+}
+
+function closeDialog(dialog) {
+    dialog?.classList.remove("show");
+}
+
 function renderMiniCart() {
     const container = document.querySelector(".mini-cart-content");
     if (!container) {
@@ -98,13 +111,12 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("checkout-btn")) {
-        console.log("CHECKOUT CLICKED");
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         if (cart.length === 0) {
             return;
         }
         const modal = document.querySelector(".checkout-modal");
-        modal.classList.add("show");
+        openDialog(modal);
         localStorage.removeItem("cart");
         updateCartCount();
         renderMiniCart();
@@ -116,12 +128,20 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("close-modal-btn")) {
-        document.querySelector(".checkout-modal").classList.remove("show");
+        closeDialog(document.querySelector(".checkout-modal"));
     }
 });
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("close-cart-btn")) {
-        document.querySelector(".mini-cart-overlay").classList.remove("show");
+        closeDialog(document.querySelector(".mini-cart-overlay"));
     }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") {
+        return;
+    }
+    closeDialog(document.querySelector(".mini-cart-overlay"));
+    closeDialog(document.querySelector(".checkout-modal"));
 });

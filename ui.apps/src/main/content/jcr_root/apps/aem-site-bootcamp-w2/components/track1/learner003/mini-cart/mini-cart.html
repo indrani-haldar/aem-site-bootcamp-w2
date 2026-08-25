@@ -1,14 +1,10 @@
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
-<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner003.site'}" />
-<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner003.site'}" />
-
 <div class="mini-cart-overlay">
-    <div class="mini-cart">
+    <div class="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title">
         <div class="mini-cart-header">
-            <h2>
+            <h2 id="mini-cart-title">
                 Shopping Cart
             </h2>
-            <button class="close-cart-btn">
+            <button class="close-cart-btn" type="button" aria-label="Close cart">
                 ✕
             </button>
         </div>
@@ -23,25 +19,25 @@
                     ₹0
                 </span>
             </div>
-            <button class="checkout-btn">
+            <button class="checkout-btn" type="button">
                 Checkout
             </button>
         </div>
     </div>
 </div>
 
-<div class="checkout-modal">
+<div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-success-title">
     <div class="checkout-modal-content">
-        <div class="success-icon">
+        <div class="success-icon" aria-hidden="true">
             ✅
         </div>
-        <h2>
+        <h2 id="checkout-success-title">
             Order Placed Successfully!
         </h2>
         <p>
             Thank you for shopping with ShopFast.
         </p>
-        <button class="close-modal-btn">
+        <button class="close-modal-btn" type="button" aria-label="Continue shopping">
             Continue Shopping
         </button>
     </div>

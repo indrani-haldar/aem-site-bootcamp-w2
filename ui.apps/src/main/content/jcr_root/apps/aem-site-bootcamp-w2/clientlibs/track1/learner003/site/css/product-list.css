@@ -11,6 +11,16 @@
     width: 100%;
 }
 
+.products-loading {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 32px;
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .products-list-container .product-card {
     background: #ffffff;
     border: 1px solid #e5e7eb;
