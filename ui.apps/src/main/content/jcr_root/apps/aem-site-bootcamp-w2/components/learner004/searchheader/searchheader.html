@@ -2,20 +2,23 @@
 
 <sly data-sly-call="${clientlib.js @ categories='aem-site-bootcamp-w2.addtocartbadge'}" />
 
-<header class="cmp-search-header" data-cmp-is="searchheader">
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner004.models.SearchHeaderModel">
 
-    <div class="cmp-search-header-logo">
-        SearchHub
-    </div>
+    <header class="cmp-search-header" data-cmp-is="searchheader">
 
-    <nav>
-        <a class="cmp-search-header-nav" href="home-page.html">Home</a>
-        <!-- <a class="cmp-search-header-nav" href="search-results-page.html?q=">Search Results</a> -->
-    </nav>
+        <div class="cmp-search-header-logo">
+            ${model.heading}
+        </div>
 
-    <div class="cmp-search-header-cart-badge">
-        Cart
-        <span id="cartCount" class="cmp-search-header-cart-count">0</span>
-    </div>
+        <nav>
+            <a class="cmp-search-header-nav" href="${model.ctaLink}">${model.ctaLabel}</a>
+            <!-- <a class="cmp-search-header-nav" href="search-results-page.html?q=">Search Results</a> -->
+        </nav>
 
-</header>
+        <div class="cmp-search-header-cart-badge">
+            Cart
+            <span id="cartCount" class="cmp-search-header-cart-count">0</span>
+        </div>
+
+    </header>
+</sly>
