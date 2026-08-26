@@ -1,0 +1,140 @@
+:root{
+   
+    /*brand action Colors*/
+    --color-primary:#0066cc;
+    --color-primary-hover:#0052a3;
+
+    --color-secondary:#333333;
+    --color-secondary-hover:#565e64;
+
+    --color-danger:#dc3545;
+    --color-dander-hover:#b02a37;
+
+    --color-success:#28a745;
+    --color-success-hover:#146c43;
+
+    --color-warning:#ffc107;
+    --color-warning-hover:#d39e00;
+
+    --color-info:#0dcaf0;
+    --color-info-hover:#0aa2c0;
+
+    /*text color*/
+    --color-text-primary:#212529;
+    --color-text-secondary:#6c757d;
+    --color-text-muted:#8a8a8a;
+    --color-text-white:#ffffff;
+
+    /*Black button*/
+    --color-black:#000000;
+    --color-black-hover:#333333;
+
+    --button-black-bg:var(--color-black);
+    --button-black-hover-bg:var(--color-black-hover);
+    --button-black-text:#ffffff;
+
+    /*Background colors */
+    --color-bg-main:#f1f1f1;
+    --color-bg-secondary:#f8f9fa;
+    --color-bg-light:#f1f3f5;
+    --color-bg-dark:#1f2937;
+
+   
+
+    /*Card color*/
+    --card-bg:#ffffff;
+    --card-text:#212529;
+
+    --card-border-color:#faf9fa;
+
+    --card-hover-bg:#f8f9fa;
+    --card-hover-border-color:#0066cc;
+
+    --card-shadow:0 2px 8px rgb(0 0 0 / 8%);
+    --card-hover-shadow:0 8px 20px rgb(0 0 0 / 15%);
+
+    /*Border color*/
+    --border-color:#dee2e6;
+    --border-color-light:#e9ecef;
+    --border-color-dark:#6c757d;
+
+    --border-radius-sm:4px;
+    --border-radius-md:8px;
+    --border-radius-lg:16px;
+    --border-radius-round:50%;
+
+
+    /* form colors*/
+    --input-bg:#ffffff;
+    --input-text:#212529;
+    --input-border:#ced4da;
+    --input--focus-border:var(--color-primary);
+    --input-focus-shadow:0 0 0 3px rgb(0 102 204 / 15%);
+    --input-disabled-bg:#e9ecef;
+
+    /*Footer */
+    --footer-bg:#1f2937;
+    --footer-text:#ffffff;
+
+    --footer-link:#d1d5db;
+    --footer-link-hover:#ffffff;
+
+    --footer-border-color:#374151;
+
+    /*heading color*/
+    --color-heading:#1f2937;
+    --color-subheading:#4b5563;
+
+    --line-height-heading:1.2;
+
+    /*typography*/
+    --font-family:Arial,sans-serif;
+    --font-size-xs:12px;
+    --font-size-sm:14px;
+    --font-size-md:16px;
+    --font-size-lg:18px;
+    --font-size-xl:20px;
+
+    --font-size-h1:48px;
+    --font-size-h2:36px;
+    --font-size-h3:30px;
+    --font-size-h4:24px;
+    --font-size-h5:20px;
+    --font-size-h6:18px;
+
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-semibold:600;
+    --font-weight-bold:700;
+
+    
+
+
+    /*Specing */
+    --spacing-xs:4px;
+    --spacing-sm:8px;
+    --spacing-md:16px;
+    --spacing-lg:24px;
+    --spacing-xl:32px;
+    --spacing-2xl:48px;
+    --spacing-3xl:64px;
+
+    /* Shadow */
+    --shadow-sm:0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md:0 4px 10 rgba(0,0,0,0.15);
+
+
+
+    /*----------------*/
+    --bg-white:#ffffff;
+    --bg-red:#f10e3b;
+    --bg-black:#000000;
+    --bg-gray:#dddddd;
+    --bg-blue:#2020e0;
+    --bg-black-hover:#333333;
+    --font-color:var(--bg-black);
+    --mt-10:10px;
+    --mt-15:15px;
+    --mt-20:20px;
+
+}

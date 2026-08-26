@@ -1,0 +1,5 @@
+.hero-banner{width: 100%;background: transparent;color: var(--color-text-white);display: flex;flex-wrap: wrap;text-align: center;justify-content:center;align-items: center;height: 350px;background-size: cover;background-repeat: no-repeat;background-position: center 23%;}
+.hero-banner .hero-content h1{color: var(--color-text-white);text-shadow: 0 2px var(--color-black-hover);}
+.hero-banner .hero-content p{text-shadow: 0 1px var(--color-black-hover);color:var(--color-text-white);}
+ .hero-banner button{background: var(--button-black-bg);border-radius:6px;border:1px solid var(--button-black-bg);padding:6px 12px;cursor: pointer;color: var(--button-black-text);transition:background-color 0.3s ease;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);}
+.hero-banner button:hover{background:var(--button-black-hover-bg);border: 1px solid var(--button-black-hover-bg); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);} 

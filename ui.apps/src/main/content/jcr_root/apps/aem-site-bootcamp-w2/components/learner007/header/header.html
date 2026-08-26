@@ -1,0 +1,89 @@
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner007.models.HeaderModel">
+<header class="site-header">
+    <div class="site-logo" aria-label="Go to Home page">
+        <a href="${model.homeCtaLink}.html" data-path="${model.homeCtaLink}"  aria-label="Go to Home page">
+        <img class="header-logo" src="${model.companyLogo}"
+            alt="${model.shopfastLogoAlt}" />
+            </a>
+    </div>
+    <nav class="site-nav" aria-label="Primary Navigation">
+        <ul>
+            <li><a href="${model.homeCtaLink}.html" data-path="${model.homeCtaLink}" aria-label="Go to Home page">
+                Home
+            </a>                
+            </li>
+
+            <li><a href="${model.shopCtaLink}.html" data-path="${model.shopCtaLink}" aria-label="Go to Shop page">
+                    Shop
+                </a>
+            </li>
+
+            <li><a href="${model.contactCtaLink}.html" data-path="${model.contactCtaLink}" aria-label="Go to Contact page">                 
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="cart">
+        Cart
+        <span class="count" name="cart-count" aria-live="polite">0</span>
+    </div>
+    <div class="cart-overlay"></div>
+    <div class="cart-popup hidden">
+        <div class="cart-popup-header">
+            <h6>Your Cart <span name="product-count"></span></h6>
+            <button type="button" class="close-btn" aria-label="Close">✕</button>
+        </div>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-footer">
+            <span class="subtotal">Subtotal</span>
+            <span class="subtotal text-right" name="cart-total-amount" aria-live="polite">$0</span>
+            <button type="button" class="checkout-btn" aria-label="Proceed to checkout">Checkout</button>
+        </div>
+
+    </div>
+</header>
+</sly>
+
+
+<div
+    id="successModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-describedby="modalDescription"
+    aria-hidden="true">
+
+    <div class="modal__content">
+
+        <div
+            id="modalIcon"
+            class="modal__icon"
+            aria-hidden="true">
+        </div>
+
+        <h2
+            id="modalTitle"
+            class="modal__title"
+            tabindex="-1">
+        </h2>
+
+        <p
+            id="modalDescription"
+            class="modal__description">
+        </p>
+
+        <button
+            type="button"
+            id="closeModal"
+            class="modal__button"
+            aria-label="Close dialog">
+            Close
+        </button>
+
+    </div>
+</div>
