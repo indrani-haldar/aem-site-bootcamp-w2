@@ -1,16 +1,15 @@
-<!-- <sly data-sly-use.heroBanner="package com.adobe.aem.bootcamp.core.models.track1.learner007.HeroModel;" /> -->
-<div class="hero-banner" 
-data-banner-image="${properties.bannerImage @ context='uri'}">
-
+    <sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner007.models.HeroModel">
+    <section class="${properties.alignment} hero-container" data-cmp-is="hero">
+    <div class="hero-banner" data-background-image="${model.bannerImage}">
     <div class="hero-content">
-        <h1>${properties.bannerTitle}</h1>
+        <h1>${model.bannerTitle}</h1>
 
-        <p>${properties.bannerDescription}</p>
-
-        <!-- ${properties.buttonLink}
-            ${properties.buttonText} -->
-            <button>${properties.buttonText}</button>
+        <p>${model.bannerDescription}</p>
+        
+            <button id="heroBtn" data-link="${model.ctaLink}.html">${model.buttonText}</button>
         </a>
     </div>
 
 </div>
+</section>
+</sly>

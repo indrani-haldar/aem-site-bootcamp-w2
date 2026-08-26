@@ -1,19 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const heroBanner = document.querySelector('.hero-banner');
+    document.querySelectorAll(".hero-banner").forEach((banner) => {
+        const imageUrl = banner.dataset.backgroundImage;
 
-    if (heroBanner) {
-        heroBanner.style.backgroundImage =
-            `linear-gradient(
-                129deg,
-                rgb(7, 138, 187),
-                rgba(28, 120, 234, 0.4)
-            ),
-            url("${heroBanner.dataset.bannerImage}")`;
+        if (imageUrl) {
+            banner.style.backgroundImage = `
+                linear-gradient(
+                    129deg,
+                    rgb(7, 138, 187),
+                    rgba(28, 120, 234, 0.4)
+                ),
+                url("${imageUrl}")
+            `;
+        }
+    });
 
-        heroBanner.style.backgroundRepeat = 'no-repeat';
-        heroBanner.style.backgroundSize = 'cover';
-        heroBanner.style.backgroundPosition = 'center';
+    const heroButton = document.getElementById("heroBtn");
+
+    if (heroButton) { 
+        heroButton.addEventListener("click", () => {
+            const targetPage = heroButton.dataset.link;
+
+            console.log("Hero CTA clicked:", targetPage);
+
+            if (targetPage) {
+                window.location.href = targetPage;
+            }
+        });
     }
 
 });

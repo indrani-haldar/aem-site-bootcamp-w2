@@ -14,6 +14,6 @@
  *  limitations under the License.
  */
 @Version("1.0")
-package com.adobe.aem.bootcamp.core.models.track1.learner007;
+package com.adobe.aem.bootcamp.core.learner007.models;
 
 import org.osgi.annotation.versioning.Version;

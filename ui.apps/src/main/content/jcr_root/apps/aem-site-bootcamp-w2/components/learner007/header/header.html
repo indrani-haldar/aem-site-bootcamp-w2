@@ -1,30 +1,24 @@
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner007.models.HeaderModel">
 <header class="site-header">
-    <div class="site-logo" aria-label="Go to Home">
-        <a href="/content/aem-site-bootcamp-w2/us/learner007/home.html" data-path="/content/aem-site-bootcamp-w2/us/learner007/home">
-        <img class="header-logo" src="/content/dam/aem-site-bootcamp-w2/learner007/shopfast_logo.jpg"
-            alt="ShopFast Site" />
+    <div class="site-logo" aria-label="Go to Home page">
+        <a href="${model.homeCtaLink}.html" data-path="${model.homeCtaLink}"  aria-label="Go to Home page">
+        <img class="header-logo" src="${model.companyLogo}"
+            alt="${model.shopfastLogoAlt}" />
             </a>
-
     </div>
     <nav class="site-nav">
-        <ul>
-            <li>
-                <a href="/content/aem-site-bootcamp-w2/us/learner007/home.html"
-                    data-path="/content/aem-site-bootcamp-w2/us/learner007/home">
-                    Home
-                </a>
+        <ul aria-label="Primary Navigation">
+            <li><a href="${model.homeCtaLink}.html" data-path="${model.homeCtaLink}">
+                Home
+            </a>                
             </li>
 
-            <li>
-                <a href="/content/aem-site-bootcamp-w2/us/learner007/shop.html"
-                    data-path="/content/aem-site-bootcamp-w2/us/learner007/shop">
+            <li><a href="${model.shopCtaLink}.html" data-path="${model.shopCtaLink}">
                     Shop
                 </a>
             </li>
 
-            <li>
-                <a href="/content/aem-site-bootcamp-w2/us/learner007/contact.html"
-                    data-path="/content/aem-site-bootcamp-w2/us/learner007/contact">
+            <li><a href="${model.contactCtaLink}.html" data-path="${model.contactCtaLink}">                 
                     Contact
                 </a>
             </li>
@@ -52,10 +46,10 @@
 
     </div>
 </header>
+</sly>
 
 
-<!-- Common Modal -->
-<d<div
+<div
     id="successModal"
     class="modal"
     role="dialog"

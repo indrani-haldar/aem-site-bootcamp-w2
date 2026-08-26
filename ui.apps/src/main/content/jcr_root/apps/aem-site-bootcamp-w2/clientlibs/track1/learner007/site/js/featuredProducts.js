@@ -1,6 +1,4 @@
 let products=[];
-//let cart = getCart();
-
 async function loadFeaturedProducts(){
     const container = document.querySelector('.featured-Products-grid');
     if(!container){

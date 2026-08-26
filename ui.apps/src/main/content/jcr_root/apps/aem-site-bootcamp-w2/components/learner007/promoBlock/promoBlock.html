@@ -1,11 +1,14 @@
-<div class="promo-block mt-3" style="background-image: linear-gradient(389deg, rgb(19 14 14 / 20%), rgb(61 63 64 / 40%)), url('${properties.promoblockImage @ context='uri'}');">
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.learner007.models.PromoBannerModel">
+<section class="${properties.alignment}  data-cmp-is="Promo block"></section>
+<div class="promo-block mt-3" data-background-image="${model.promoblockImage}">
     <div class="promo-content">
-        <h2>${properties.promoHeading}</h2>
+        <h2>${model.promoHeading}</h2>
         <ul>
-            <li>${properties.benefit1}</li>
-            <li>${properties.benefit2}</li>
-            <li>${properties.benefit3}</li>
-            <li>${properties.benefit4}</li>
+            <li>${model.benefit1}</li>
+            <li>${model.benefit2}</li>
+            <li>${model.benefit3}</li>
+            <li>${model.benefit4}</li>
         </ul>
     </div>
 </div>
+</sly>

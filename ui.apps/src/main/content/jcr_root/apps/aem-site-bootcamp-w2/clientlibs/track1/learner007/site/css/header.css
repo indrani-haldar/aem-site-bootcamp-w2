@@ -1,5 +1,5 @@
 
-
+.header{position:sticky;top:0;z-index: 900;background: var(--color-bg-main);}
 .site-header{width: 100%;padding: 0 15px;float: left;display: flex;justify-content: space-between;align-items: center;box-sizing: border-box;border-bottom: 1px solid #ccc;;}
 .site-header .site-logo{width: 150px;display: flex;text-align: center;}
 .site-header .site-logo .header-logo{max-width: 100%;height: auto;display: block;}

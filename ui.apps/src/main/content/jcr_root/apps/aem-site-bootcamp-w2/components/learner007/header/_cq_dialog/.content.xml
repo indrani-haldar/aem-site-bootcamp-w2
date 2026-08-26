@@ -5,6 +5,57 @@
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Header"
-    sling:resourceType="cq/gui/components/authoring/dialog"/>
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+     <content jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">    
+      
+            <items jcr:primaryType="nt:unstructured"> 
+
+              <column jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                     <items jcr:primaryType="nt:unstructured">
+                        <companyLogo 
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Shopfast Logo Image"
+                            name="./companyLogo"
+                            rootPath="/content/dam"/>
+
+                            <homeCtaLink 
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Home CTA Link"
+                            name="./homeCtaLink"
+                            rootPath="/content"/>
+
+                            <shopCtaLink 
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Shop CTA Link"
+                            name="./shopCtaLink"
+                            rootPath="/content"/>
+
+                            <contactCtaLink 
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Contact CTA Link"
+                            name="./contactCtaLink"
+                            rootPath="/content"/>
+
+
+                        
+                        <shopfastLogoAlt
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Logo Alt Text"
+                            name="./shopfastLogoAlt"/>
+    
+                     </items>
+                </column>
+          </items>
+      </content>
+    </jcr:root>
 
    
