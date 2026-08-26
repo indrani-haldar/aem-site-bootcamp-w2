@@ -36,9 +36,7 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
                 String query = request.getParameter("q");
 
-                URL url = URI.create(API_URL).toURL();
-
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                HttpURLConnection connection = openConnection();
 
                 connection.setRequestMethod("GET");
                 connection.setConnectTimeout(5000);
@@ -84,5 +82,10 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
                 response.getWriter()
                                 .write(filteredProducts.toString());
+        }
+
+        protected HttpURLConnection openConnection() throws IOException {
+                URL url = URI.create(API_URL).toURL();
+                return (HttpURLConnection) url.openConnection();
         }
 }
