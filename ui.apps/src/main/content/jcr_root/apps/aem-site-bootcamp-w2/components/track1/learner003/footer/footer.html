@@ -1,0 +1,46 @@
+<footer class="shopfast-footer">
+    <div class="footer-column">
+        <h3>${properties.footerTitle || 'SHOPFAST'}</h3>
+    </div>
+    <div class="footer-column">
+        <h4>NAVIGATE</h4>
+        <ul>
+            <sly data-sly-list.navItem="${currentPage.parent.listChildren}">
+                <li data-sly-test="${!navItem.hideInNav && (navItem.name == 'Home' || navItem.name == 'shop')}">
+                    <a
+                        href="${navItem.path @ extension='html', context='uri'}"
+                        aria-current="${navItem.path == currentPage.path ? 'page' : ''}">
+                        ${navItem.navigationTitle || navItem.pageTitle || navItem.title}
+                    </a>
+                </li>
+            </sly>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>RESOURCES</h4>
+        <ul>
+            <sly data-sly-list.navItem="${currentPage.parent.listChildren}">
+                <li data-sly-test="${!navItem.hideInNav && navItem.name == 'Contact'}">
+                    <a
+                        href="${navItem.path @ extension='html', context='uri'}"
+                        aria-current="${navItem.path == currentPage.path ? 'page' : ''}">
+                        ${navItem.navigationTitle || navItem.pageTitle || navItem.title}
+                    </a>
+                </li>
+            </sly>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>CONNECT</h4>
+        <ul>
+            <li>
+                <a href="https://linkedin.com">
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-bottom">
+    © 2026 ShopFast
+</div>

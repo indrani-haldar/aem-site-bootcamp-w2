@@ -1,0 +1,31 @@
+<header class="shopfast-header">
+    <div class="logo">
+        SHOPFAST
+    </div>
+    <nav class="header-nav" aria-label="Primary navigation">
+        <sly data-sly-list.navItem="${currentPage.parent.listChildren}">
+            <a
+                data-sly-test="${!navItem.hideInNav}"
+                class="${navItem.path == currentPage.path ? 'active' : ''}"
+                href="${navItem.path @ extension='html', context='uri'}"
+                aria-current="${navItem.path == currentPage.path ? 'page' : ''}">
+                ${navItem.navigationTitle || navItem.pageTitle || navItem.title}
+            </a>
+        </sly>
+    </nav>
+    <button class="cart-btn" type="button" aria-label="Cart">
+        <span class="cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="9" cy="20" r="1.5"></circle>
+                <circle cx="18" cy="20" r="1.5"></circle>
+                <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H7"></path>
+            </svg>
+        </span>
+        <span class="sr-only">Cart</span>
+        <span class="cart-count">
+            0
+        </span>
+    </button>
+    <sly data-sly-resource="${'mini-cart' @resourceType='aem-site-bootcamp-w2/components/track1/learner003/mini-cart'}">
+    </sly>
+</header>
