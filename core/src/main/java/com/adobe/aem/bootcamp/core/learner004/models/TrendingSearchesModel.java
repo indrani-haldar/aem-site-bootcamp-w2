@@ -1,6 +1,7 @@
 package com.adobe.aem.bootcamp.core.learner004.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -43,7 +44,6 @@ public class TrendingSearchesModel {
 
     @PostConstruct
     protected void init() {
-        System.out.println("TrendingSearchesModel Init");
         trendingSearches = new ArrayList<>();
 
         Resource folderResource = resourceResolver.getResource(
@@ -56,7 +56,6 @@ public class TrendingSearchesModel {
         for (Resource child : folderResource.getChildren()) {
 
             ContentFragment cf = child.adaptTo(ContentFragment.class);
-            System.out.println("Content Fragment: " + cf);
             if (cf != null) {
 
                 ContentElement labelElement = cf.getElement("label");
@@ -65,8 +64,6 @@ public class TrendingSearchesModel {
 
                 if (labelElement != null
                         && queryElement != null) {
-                    System.out.println("Content Fragment:labelElement " + labelElement.getContent());
-                    System.out.println("Content Fragment:queryElement " + queryElement.getContent());
 
                     trendingSearches.add(
                             new TrendingSearch(
@@ -78,7 +75,7 @@ public class TrendingSearchesModel {
     }
 
     public List<TrendingSearch> getTrendingSearches() {
-        return trendingSearches;
+        return Collections.unmodifiableList(new ArrayList<>(trendingSearches));
     }
 
 }
