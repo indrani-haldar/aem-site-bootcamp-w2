@@ -1,4 +1,4 @@
-<footer class="cmp-learner008-footer" data-sly-use.model="com.adobe.aem.bootcamp.core.models.Learner008FooterModel">
+<footer class="cmp-learner008-footer" data-sly-use.model="com.adobe.aem.bootcamp.core.learner008.models.Learner008FooterModel">
     <div class="cmp-learner008-footer__cols">
         <section class="cmp-learner008-footer__col">
             <h3>${model.brandTitle}</h3>
@@ -7,9 +7,9 @@
         <section class="cmp-learner008-footer__col">
             <h3>Quick Links</h3>
             <ul class="cmp-learner008-footer__links">
-                <li><a href="${model.homePath}">Home</a></li>
-                <li><a href="${model.shopPath}">Shop</a></li>
-                <li><a href="${model.contactPath}">Contact</a></li>
+                <li><a href="${model.homePath @ context='uri'}" x-cq-linkchecker="skip">Home</a></li>
+                <li><a href="${model.shopPath @ context='uri'}" x-cq-linkchecker="skip">Shop</a></li>
+                <li><a href="${model.contactPath @ context='uri'}" x-cq-linkchecker="skip">Contact</a></li>
             </ul>
         </section>
         <section class="cmp-learner008-footer__col">

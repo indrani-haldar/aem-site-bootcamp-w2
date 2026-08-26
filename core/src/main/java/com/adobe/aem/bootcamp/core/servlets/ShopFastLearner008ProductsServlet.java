@@ -1,6 +1,6 @@
 package com.adobe.aem.bootcamp.core.servlets;
 
-import com.adobe.aem.bootcamp.core.models.FakeStoreApiClient;
+import com.adobe.aem.bootcamp.core.learner008.models.FakeStoreApiClient;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner008.models;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

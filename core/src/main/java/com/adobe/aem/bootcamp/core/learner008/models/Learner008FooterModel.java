@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner008.models;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -47,15 +47,15 @@ public class Learner008FooterModel {
     }
 
     public String getHomePath() {
-        return defaultIfBlank(homePath, "/content/aem-site-bootcamp-w2/us/en.html");
+        return normalizePagePath(defaultIfBlank(homePath, "/content/aem-site-bootcamp-w2/us/en.html"));
     }
 
     public String getShopPath() {
-        return defaultIfBlank(shopPath, "/content/aem-site-bootcamp-w2/us/en/shop.html");
+        return normalizePagePath(defaultIfBlank(shopPath, "/content/aem-site-bootcamp-w2/us/en/shop.html"));
     }
 
     public String getContactPath() {
-        return defaultIfBlank(contactPath, "/content/aem-site-bootcamp-w2/us/en/contact.html");
+        return normalizePagePath(defaultIfBlank(contactPath, "/content/aem-site-bootcamp-w2/us/en/contact.html"));
     }
 
     public String getSupportEmail() {
@@ -79,5 +79,12 @@ public class Learner008FooterModel {
             return fallback;
         }
         return value;
+    }
+
+    private String normalizePagePath(String path) {
+        if (path.startsWith("/content/") && !path.endsWith(".html")) {
+            return path + ".html";
+        }
+        return path;
     }
 }

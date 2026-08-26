@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Component"
-    jcr:title="Learner008 Search Filter Bar"
-    jcr:description="Search and filter bar for ShopFast"
+    jcr:title="Learner008 Featured Products"
+    jcr:description="Top rated ShopFast products"
     componentGroup="Bootcamp - Track 1"/>

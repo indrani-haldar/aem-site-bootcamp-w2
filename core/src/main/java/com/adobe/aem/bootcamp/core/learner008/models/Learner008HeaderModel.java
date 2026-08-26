@@ -1,4 +1,4 @@
-package com.adobe.aem.bootcamp.core.models;
+package com.adobe.aem.bootcamp.core.learner008.models;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;

@@ -1,9 +1,0 @@
-<section class="cmp-learner008-search" data-sly-use.model="com.adobe.aem.bootcamp.core.models.Learner008SearchFilterBarModel" data-cmp-is="shopfast-searchfilterbar" data-products-endpoint="${model.productsEndpoint}" data-all-label="${model.allCategoryLabel}" data-mode="${model.displayMode}" data-featured-limit="${model.featuredLimit}">
-    <sly data-sly-test="${!model.featuredMode}">
-        <label class="cmp-learner008-search__label" for="${model.inputId}">${model.searchLabel}</label>
-        <input class="cmp-learner008-search__input" id="${model.inputId}" type="search" placeholder="${model.searchPlaceholder}" data-cmp-hook-shopfast-search="input"/>
-        <div class="cmp-learner008-search__categories" data-cmp-hook-shopfast-search="categories"></div>
-    </sly>
-    <div class="cmp-learner008-search__status" data-cmp-hook-shopfast-search="status" aria-live="polite"></div>
-    <div class="cmp-learner008-search__results" data-cmp-hook-shopfast-search="results"></div>
-</section>

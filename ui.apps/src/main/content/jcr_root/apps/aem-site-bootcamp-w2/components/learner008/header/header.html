@@ -1,9 +1,14 @@
-<header class="cmp-learner008-header" data-sly-use.model="com.adobe.aem.bootcamp.core.models.Learner008HeaderModel" data-cmp-is="shopfast-header">
-    <a class="cmp-learner008-header__brand" href="${model.homePath}">${model.siteTitle}</a>
+<header class="cmp-learner008-header" data-sly-use.model="com.adobe.aem.bootcamp.core.learner008.models.Learner008HeaderModel" data-cmp-is="shopfast-header">
+    <a class="cmp-learner008-header__brand" href="${model.homePath @ context='uri'}" data-cmp-hook-shopfast-header="nav-link" data-href="${model.homePath @ context='uri'}" x-cq-linkchecker="skip">${model.siteTitle}</a>
+    <button class="cmp-learner008-header__menu" type="button" data-cmp-hook-shopfast-header="menu" aria-expanded="false" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <nav class="cmp-learner008-header__nav" aria-label="Main navigation">
-        <a href="${model.homePath}">Home</a>
-        <a href="${model.shopPath}">Shop</a>
-        <a href="${model.contactPath}">Contact</a>
+        <a class="cmp-learner008-header__link" href="${model.homePath @ context='uri'}" data-cmp-hook-shopfast-header="nav-link" data-href="${model.homePath @ context='uri'}" x-cq-linkchecker="skip">Home</a>
+        <a class="cmp-learner008-header__link" href="${model.shopPath @ context='uri'}" data-cmp-hook-shopfast-header="nav-link" data-href="${model.shopPath @ context='uri'}" x-cq-linkchecker="skip">Shop</a>
+        <a class="cmp-learner008-header__link" href="${model.contactPath @ context='uri'}" data-cmp-hook-shopfast-header="nav-link" data-href="${model.contactPath @ context='uri'}" x-cq-linkchecker="skip">Contact</a>
     </nav>
     <button class="cmp-learner008-header__cart" type="button" data-cmp-hook-shopfast-header="open-cart" aria-label="${model.cartButtonLabel}">
         ${model.cartButtonLabel}

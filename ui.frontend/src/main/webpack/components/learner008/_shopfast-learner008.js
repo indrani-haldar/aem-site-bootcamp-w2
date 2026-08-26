@@ -89,6 +89,51 @@
 
         var badge = header.querySelector('[data-cmp-hook-shopfast-header="badge"]');
         var openCartButton = header.querySelector('[data-cmp-hook-shopfast-header="open-cart"]');
+        var menuButton = header.querySelector('[data-cmp-hook-shopfast-header="menu"]');
+        var navLinks = header.querySelectorAll('[data-cmp-hook-shopfast-header="nav-link"]');
+
+        if (menuButton) {
+            menuButton.addEventListener("click", function() {
+                var open = !header.classList.contains("is-menu-open");
+                header.classList.toggle("is-menu-open", open);
+                menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+                menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+            });
+        }
+
+        function normalizePath(path) {
+            var contentIndex = path.indexOf("/content/");
+            var normalized = contentIndex >= 0 ? path.substring(contentIndex) : path;
+            normalized = normalized.replace(/\.html$/, "");
+            normalized = normalized.replace(/\/$/, "");
+            return normalized || "/";
+        }
+
+        var currentPath = normalizePath(window.location.pathname);
+
+        navLinks.forEach(function(link) {
+            var linkUrl = new URL(link.getAttribute("href") || link.dataset.href || "#", window.location.href);
+            var isCurrent = normalizePath(linkUrl.pathname) === currentPath;
+            link.classList.toggle("is-active", isCurrent);
+            if (isCurrent) {
+                link.setAttribute("aria-current", "page");
+            }
+
+            link.addEventListener("click", function(event) {
+                var target = link.getAttribute("href") || link.dataset.href;
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+                if (menuButton) {
+                    header.classList.remove("is-menu-open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Open navigation");
+                }
+                window.location.href = target;
+            });
+        });
 
         if (openCartButton) {
             openCartButton.addEventListener("click", function() {
@@ -108,59 +153,55 @@
         broadcastCartChange(readCart());
     }
 
-    function initStandaloneCardTeasers() {
-        var cards = document.querySelectorAll('[data-cmp-is="shopfast-cardteaser"]');
-        cards.forEach(function(card) {
-            card.removeAttribute("data-cmp-is");
-            var addButton = card.querySelector('[data-cmp-hook-shopfast-card="add"]');
-            if (!addButton) {
-                return;
-            }
-
-            addButton.addEventListener("click", function() {
-                addToCart({
-                    id: card.dataset.productId,
-                    title: card.dataset.productTitle,
-                    image: card.dataset.productImage,
-                    price: card.dataset.productPrice
-                });
+    function initHero() {
+        var buttons = document.querySelectorAll('[data-cmp-hook-shopfast-hero="cta"]');
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                var target = button.dataset.href;
+                if (target) {
+                    window.location.href = target;
+                }
             });
         });
     }
 
-    function renderSearchProducts(items, target) {
+    function renderFeaturedProducts(items, target) {
+        if (!target) {
+            return;
+        }
+
         var fragment = document.createDocumentFragment();
 
         if (!items.length) {
             var empty = document.createElement("p");
-            empty.className = "cmp-learner008-search__empty";
+            empty.className = "cmp-learner008-featured__empty";
             empty.textContent = "No products found.";
             fragment.appendChild(empty);
         }
 
         items.forEach(function(item) {
             var card = document.createElement("article");
-            card.className = "cmp-learner008-card";
+            card.className = "cmp-learner008-featured__card";
 
             var image = document.createElement("img");
-            image.className = "cmp-learner008-card__image";
+            image.className = "cmp-learner008-featured__image";
             image.src = item.image;
             image.alt = item.title;
 
             var title = document.createElement("h3");
-            title.className = "cmp-learner008-card__title";
+            title.className = "cmp-learner008-featured__product-title";
             title.textContent = item.title;
 
             var description = document.createElement("p");
-            description.className = "cmp-learner008-card__description";
+            description.className = "cmp-learner008-featured__description";
             description.textContent = item.description;
 
             var price = document.createElement("p");
-            price.className = "cmp-learner008-card__price";
+            price.className = "cmp-learner008-featured__price";
             price.textContent = formatPrice(item.price);
 
             var button = document.createElement("button");
-            button.className = "cmp-learner008-card__action";
+            button.className = "cmp-learner008-featured__action";
             button.type = "button";
             button.textContent = "Add to cart";
             button.addEventListener("click", function() {
@@ -179,8 +220,8 @@
         target.appendChild(fragment);
     }
 
-    function initSearchFilterBar() {
-        var blocks = document.querySelectorAll('[data-cmp-is="shopfast-searchfilterbar"]');
+    function initFeaturedProducts() {
+        var blocks = document.querySelectorAll('[data-cmp-is="shopfast-featuredproducts"]');
         if (!blocks.length) {
             return;
         }
@@ -189,59 +230,14 @@
             block.removeAttribute("data-cmp-is");
 
             var endpoint = block.dataset.productsEndpoint;
-            var allLabel = block.dataset.allLabel || "All";
-            var mode = block.dataset.mode === "featured" ? "featured" : "catalog";
             var featuredLimit = Number(block.dataset.featuredLimit) || 4;
-            var input = block.querySelector('[data-cmp-hook-shopfast-search="input"]');
-            var categoriesRoot = block.querySelector('[data-cmp-hook-shopfast-search="categories"]');
-            var status = block.querySelector('[data-cmp-hook-shopfast-search="status"]');
-            var results = block.querySelector('[data-cmp-hook-shopfast-search="results"]');
-
-            var selectedCategory = "all";
-            var currentQuery = "";
+            var status = block.querySelector('[data-cmp-hook-shopfast-featured="status"]');
+            var results = block.querySelector('[data-cmp-hook-shopfast-featured="results"]');
 
             function updateStatus(text) {
                 if (status) {
                     status.textContent = text;
                 }
-            }
-
-            function renderCategories(categories) {
-                if (!categoriesRoot) {
-                    return;
-                }
-
-                categoriesRoot.innerHTML = "";
-
-                var allButton = document.createElement("button");
-                allButton.type = "button";
-                allButton.className = "cmp-learner008-search__chip";
-                allButton.dataset.category = "all";
-                allButton.textContent = allLabel;
-                categoriesRoot.appendChild(allButton);
-
-                categories.forEach(function(category) {
-                    var button = document.createElement("button");
-                    button.type = "button";
-                    button.className = "cmp-learner008-search__chip";
-                    button.dataset.category = category;
-                    button.textContent = category;
-                    categoriesRoot.appendChild(button);
-                });
-
-                highlightSelectedCategory();
-            }
-
-            function highlightSelectedCategory() {
-                if (!categoriesRoot) {
-                    return;
-                }
-
-                categoriesRoot.querySelectorAll("button").forEach(function(button) {
-                    var active = button.dataset.category === selectedCategory;
-                    button.classList.toggle("is-active", active);
-                    button.setAttribute("aria-pressed", active ? "true" : "false");
-                });
             }
 
             function getRate(item) {
@@ -273,7 +269,7 @@
                         });
 
                         var topItems = items.slice(0, featuredLimit);
-                        renderSearchProducts(topItems, results);
+                        renderFeaturedProducts(topItems, results);
                         updateStatus("Top " + topItems.length + " rated products");
                     })
                     .catch(function() {
@@ -284,51 +280,7 @@
                     });
             }
 
-            function loadCatalogProducts() {
-                updateStatus("Loading products...");
-                var params = new URLSearchParams();
-                params.set("q", currentQuery);
-                params.set("category", selectedCategory);
-
-                fetchJson(endpoint + "?" + params.toString())
-                    .then(function(payload) {
-                        renderCategories(payload.categories || []);
-                        renderSearchProducts(payload.items || [], results);
-                        updateStatus((payload.total || 0) + " products");
-                    })
-                    .catch(function() {
-                        updateStatus("Unable to load products.");
-                        if (results) {
-                            results.innerHTML = "";
-                        }
-                    });
-            }
-
-            if (mode === "featured") {
-                loadFeaturedProducts();
-                return;
-            }
-
-            if (input) {
-                input.addEventListener("input", function() {
-                    currentQuery = input.value || "";
-                    loadCatalogProducts();
-                });
-            }
-
-            if (categoriesRoot) {
-                categoriesRoot.addEventListener("click", function(event) {
-                    var button = event.target.closest("button[data-category]");
-                    if (!button) {
-                        return;
-                    }
-                    selectedCategory = button.dataset.category;
-                    highlightSelectedCategory();
-                    loadCatalogProducts();
-                });
-            }
-
-            loadCatalogProducts();
+            loadFeaturedProducts();
         });
     }
 
@@ -342,6 +294,7 @@
 
         var cartsEndpoint = block.dataset.cartsEndpoint;
         var openButton = block.querySelector('[data-cmp-hook-shopfast-cart="open"]');
+        var headerCartButton = document.querySelector('[data-cmp-hook-shopfast-header="open-cart"]');
         var overlay = block.querySelector('[data-cmp-hook-shopfast-cart="overlay"]');
         var drawer = block.querySelector('[data-cmp-hook-shopfast-cart="drawer"]');
         var closeButton = block.querySelector('[data-cmp-hook-shopfast-cart="close"]');
@@ -358,7 +311,9 @@
         function closeDrawer() {
             overlay.hidden = true;
             drawer.hidden = true;
-            openButton.focus();
+            if (headerCartButton) {
+                headerCartButton.focus();
+            }
         }
 
         function updateQuantity(id, delta) {
@@ -468,7 +423,9 @@
                 });
         }
 
-        openButton.addEventListener("click", openDrawer);
+        if (openButton) {
+            openButton.addEventListener("click", openDrawer);
+        }
         closeButton.addEventListener("click", closeDrawer);
         overlay.addEventListener("click", closeDrawer);
 
@@ -549,8 +506,8 @@
 
     function init() {
         initHeader();
-        initStandaloneCardTeasers();
-        initSearchFilterBar();
+        initHero();
+        initFeaturedProducts();
         initMiniCartDrawer();
         initContactForm();
     }

@@ -1,5 +1,5 @@
-<section class="cmp-learner008-hero" data-sly-use.model="com.adobe.aem.bootcamp.core.models.Learner008HeroModel">
+<section class="cmp-learner008-hero" data-sly-use.model="com.adobe.aem.bootcamp.core.learner008.models.Learner008HeroModel">
     <h1 class="cmp-learner008-hero__title">${model.heading}</h1>
     <p class="cmp-learner008-hero__subtext">${model.subtext}</p>
-    <a class="cmp-learner008-hero__cta" href="${model.ctaLink}" data-sly-test="${model.ctaLabel}">${model.ctaLabel}</a>
+    <button class="cmp-learner008-hero__cta" type="button" data-cmp-hook-shopfast-hero="cta" data-href="${model.ctaLink @ context='uri'}" data-sly-test="${model.ctaLabel}">${model.ctaLabel}</button>
 </section>
