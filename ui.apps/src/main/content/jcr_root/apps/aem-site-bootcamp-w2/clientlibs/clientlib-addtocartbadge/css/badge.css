@@ -1,0 +1,12 @@
+.header-nav {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.cart-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
