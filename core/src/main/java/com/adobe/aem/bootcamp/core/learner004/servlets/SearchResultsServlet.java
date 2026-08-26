@@ -36,7 +36,24 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
                 String query = request.getParameter("q");
 
-                HttpURLConnection connection = openConnection();
+                ObjectMapper mapper = new ObjectMapper();
+
+                JsonNode products = mapper.readTree(fetchProductsJson());
+
+                ArrayNode filteredProducts = filterProducts(mapper, products, query);
+
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+
+                response.getWriter()
+                                .write(filteredProducts.toString());
+        }
+
+        protected String fetchProductsJson() throws IOException {
+
+                URL url = URI.create(API_URL).toURL();
+
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 connection.setRequestMethod("GET");
                 connection.setConnectTimeout(5000);
@@ -56,10 +73,10 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
                 reader.close();
 
-                ObjectMapper mapper = new ObjectMapper();
+                return apiResponse.toString();
+        }
 
-                JsonNode products = mapper.readTree(
-                                apiResponse.toString());
+        private ArrayNode filterProducts(ObjectMapper mapper, JsonNode products, String query) {
 
                 ArrayNode filteredProducts = mapper.createArrayNode();
 
@@ -77,11 +94,7 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
                         }
                 }
 
-                response.setContentType("application/json");
-                response.setCharacterEncoding("UTF-8");
-
-                response.getWriter()
-                                .write(filteredProducts.toString());
+                return filteredProducts;
         }
 
         protected HttpURLConnection openConnection() throws IOException {
