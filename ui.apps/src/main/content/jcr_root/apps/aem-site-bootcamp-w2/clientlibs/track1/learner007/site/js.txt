@@ -5,5 +5,5 @@ header.js
 herobanner.js
 featuredProducts.js
 productSearch.js
-promobanner,js
+promobanner.js
 contact.js

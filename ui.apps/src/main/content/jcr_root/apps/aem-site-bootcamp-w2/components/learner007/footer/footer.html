@@ -2,28 +2,30 @@
 <footer class="footer mt-20">
 
     <section class="col-3">
-        <span class="footer-logo">${model.companyLogo}</span>        
+        <a class="footer-logo" href="${model.homeCtaLink}.html" aria-label="Go to Home Page">
+        ${model.companyLogo}
+        </a>        
     </section>
 
     <section class="col-3 ">
         <h5>Navigate</h5>
         <ul>
-            <li><a href="${model.homeCtaLink}.html">${model.home}</a></li>
-            <li><a>${model.shop}</a></li>
+            <li><a href="${model.homeCtaLink}.html" aria-label="Go to Home Page">${model.home}</a></li>
+            <li><a href="${model.shopCtaLink}.html" aria-label="Go to Shop Page">${model.shop}</a></li>
         </ul>
     </section>
 
     <section class="col-3 ">
         <h5>Resources</h5>
         <ul>
-            <li><a href="${model.resourceCtaLink}" target="_blank">${model.resource}</a></li>
+            <li><a href="${model.resourceCtaLink}" target="_blank" rel="noopener noreferrer" aria-label="Visit Resources Page">${model.resource}</a></li>
         </ul>
     </section>
 
     <section class="col-3 ">
         <h5>Contact</h5>
         <ul>
-            <li><a href="${model.linkedinCTALink}" target="_blank">${model.linkedin}</a></li>
+            <li><a href="${model.linkedinCTALink}" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">${model.linkedin}</a></li>
         </ul>
     </section>
 

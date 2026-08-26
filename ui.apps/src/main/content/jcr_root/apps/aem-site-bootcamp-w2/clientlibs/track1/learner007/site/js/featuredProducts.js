@@ -9,8 +9,7 @@ async function loadFeaturedProducts(){
         if(!response.ok){
             throw new Error('DB connection error')
         }
-       let data = await response.json();
-       
+       let data = await response.json();       
         products.push(...data.products)
          renderProducts(products)
     }catch(err){
@@ -21,14 +20,11 @@ async function loadFeaturedProducts(){
     }
 }
 
-
-
 function renderProducts(products){
     const container = document.querySelector('.featured-Products-grid');
     if(!container){
         return
-    }
-    
+    }    
     let cartHtml=products.map(product=>`
             <div class="col-4">
             <div class="featured-Products-card" id="${product.id}">
@@ -59,7 +55,6 @@ function addToCart(productID){
     const product = products.find((item)=>item.id===productID)
     if(!product) return;
     const exitingProduct = cart.find((item)=>item.id === productID)
-
     if(exitingProduct){
         exitingProduct.quantity +=1;
     }else{
@@ -88,7 +83,6 @@ function changeProductHeading() {
 }
 
 document.addEventListener('DOMContentLoaded', changeProductHeading);
-
 document.addEventListener('DOMContentLoaded',()=>{
     changeProductHeading();
     loadFeaturedProducts();

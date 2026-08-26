@@ -21,38 +21,27 @@
                             fieldLabel="Banner Image"
                             name="./bannerImage"
                             rootPath="/content/dam"/>
-
                             <ctaLink 
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                             fieldLabel="CTA Link"
                             name="./ctaLink"
                             rootPath="/content"/>
-
                         <bannerTitle
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldLabel="Banner Title"
                             name="./bannerTitle"/>
-
                         <bannerDescription
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                             fieldLabel="Banner Description"
-                            name="./bannerDescription"/>
-                        
+                            name="./bannerDescription"/>                        
                         <buttonText
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldLabel="Button Text"
                             name="./buttonText"/>
-                        
-                        <bannerAlt
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                            fieldLabel="Banner Alt Text"
-                            name="./bannerAlt"/>
-    
                      </items>
                 </column>
           </items>

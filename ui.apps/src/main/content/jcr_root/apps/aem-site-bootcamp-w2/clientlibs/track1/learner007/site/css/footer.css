@@ -22,6 +22,7 @@
 .footer section ul li a:hover{cursor: pointer;color: var(--footer-link-hover);}
 .footer section p{padding: 10px 0; margin: 0;font-size:var(--font-size-xs);text-transform:capitalize;color:var(--footer-text);}
 .footer section .footer-logo{padding:4px;border:1px dashed  var(--border-color-light); text-transform:uppercase;width: auto;}
+.footer section a.footer-logo{cursor: pointer;color: var(--color-text-white);text-decoration: none;}
 
 @media (min-width:768px){
 .col-1 { width: 8.333333%; }

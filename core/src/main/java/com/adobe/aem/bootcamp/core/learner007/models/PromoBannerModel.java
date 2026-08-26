@@ -31,30 +31,10 @@ public class PromoBannerModel {
     @ValueMapValue
     private String benefit4;
 
-    public String getPromoblockImage() {
-        return promoblockImage;
-    }
-     public String getPromoAltText() {
-        return promoAltText;
-    }
-    
-
-    public String getPromoHeading() {
-        return promoHeading;
-    }
-
-    public String getBenefit1() {
-        return benefit1;
-    }
-
-    public String getBenefit2() {
-        return benefit2;
-    }
-
-    public String getBenefit3() {
-        return benefit2;
-    }
-     public String getBenefit4() {
-        return benefit4;
-    }
+    public String getPromoblockImage() {return promoblockImage;}   
+    public String getPromoHeading() {return promoHeading;}
+    public String getBenefit1() {return benefit1;}
+    public String getBenefit2() {return benefit2;}
+    public String getBenefit3() {return benefit3;}
+     public String getBenefit4() {return benefit4;}
 }

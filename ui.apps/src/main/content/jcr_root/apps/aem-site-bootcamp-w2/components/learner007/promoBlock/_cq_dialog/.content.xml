@@ -6,7 +6,6 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Footer"
     sling:resourceType="cq/gui/components/authoring/dialog">
-
     <content jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
         <items jcr:primaryType="nt:unstructured">
@@ -18,20 +17,13 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         fieldLabel="Promo Block Images"
                         name="./promoblockImage"
-                        rootPath="/content/dam"/>
-                    
+                        rootPath="/content/dam"/>                    
                     <promoHeading 
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldLabel="Promo Heading"
                         name="./promoHeading"
-                        />
-                        <promoAltText 
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Promo Alt Text"
-                        name="./promoAltText"
-                        />
+                        />                        
                     <benefit1 
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
