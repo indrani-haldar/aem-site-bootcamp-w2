@@ -1,5 +1,5 @@
 .products-section {
-    padding: 40px;
+    padding: 40px 0px;
     background: #f7f7f7;
 }
 
@@ -180,12 +180,6 @@
     color: #4d2d2d;
 }
 
-@media (max-width: 991px) {
-    .products-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 1024px) {
     .products-container {
         grid-template-columns: repeat(2, 1fr);
@@ -199,9 +193,7 @@
     .products-section {
         padding: 30px 20px;
     }
-}
 
-@media (max-width: 1024px) {
     .carousel-btn {
         width: 40px;
         height: 40px;
@@ -209,7 +201,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .products-section {
         padding: 20px;
     }
@@ -238,9 +230,7 @@
         width: calc(100% - 30px);
         margin: 0 15px 15px;
     }
-}
 
-@media (max-width: 600px) {
     .carousel-btn {
         width: 36px;
         height: 36px;

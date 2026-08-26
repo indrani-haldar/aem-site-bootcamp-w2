@@ -3,18 +3,21 @@ package com.adobe.aem.bootcamp.core.servlets.track1.learner002;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
 import javax.servlet.Servlet;
 import java.io.IOException;
 import java.net.URL;
 import org.apache.commons.io.IOUtils;
 import org.apache.sling.api.servlets.HttpConstants;
-import org.apache.sling.api.servlets.ServletResolverConstants;
 
-@Component(service = Servlet.class, property = {
-                ServletResolverConstants.SLING_SERVLET_PATHS + "=/bin/shopfast/products",
-                ServletResolverConstants.SLING_SERVLET_METHODS + "=" + HttpConstants.METHOD_GET
-})
+@Component(service = { Servlet.class })
+@SlingServletResourceTypes(resourceTypes = {
+        "aem-site-bootcamp-w2/components/track1/learner002/product-grid",
+        "aem-site-bootcamp-w2/components/track1/learner002/product-list",
+        "aem-site-bootcamp-w2/components/track1/learner002/search-filter"
+}, selectors = "product-results", extensions = "json", methods = HttpConstants.METHOD_GET)
+
 public class ProductServlet extends SlingSafeMethodsServlet {
 
         @Override

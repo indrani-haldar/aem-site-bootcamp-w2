@@ -139,14 +139,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-@media (max-width: 600px) {
-    .shop-product-list {
-        padding: 20px;
-    }
-
-    .products-list-container {
-        grid-template-columns: 1fr;
-    }
-
-}

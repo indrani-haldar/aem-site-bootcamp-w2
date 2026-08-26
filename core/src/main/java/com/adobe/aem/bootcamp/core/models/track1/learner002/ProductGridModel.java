@@ -12,9 +12,6 @@ public class ProductGridModel {
     private String title;
 
     public String getTitle() {
-        if (title == null || title.isEmpty()) {
-            return "Featured Products";
-        }
         return title;
     }
 }

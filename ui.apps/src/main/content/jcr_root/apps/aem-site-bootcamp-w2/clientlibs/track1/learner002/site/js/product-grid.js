@@ -28,7 +28,8 @@ window.addEventListener("load", async () => {
         return;
     }
     try {
-        const response = await fetch("/bin/shopfast/products");
+        const resultsUrl = document.getElementById('product-grid').dataset.resultsUrl;
+        const response = await fetch(resultsUrl);
         const products = await response.json();
         debugger
         const productLists = products.products;

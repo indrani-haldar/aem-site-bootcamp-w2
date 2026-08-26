@@ -112,9 +112,7 @@ body {
         gap: 20px;
         order: 3;
     }
-}
 
-@media (max-width: 768px) {
     .cart-count {
         top: 4px;
         right: 4px;

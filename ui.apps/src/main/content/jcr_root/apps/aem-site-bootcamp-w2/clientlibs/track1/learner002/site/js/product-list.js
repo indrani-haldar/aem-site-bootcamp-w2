@@ -5,7 +5,8 @@ window.addEventListener("load", async () => {
     if (!container) {
         return;
     }
-    const response = await fetch("/bin/shopfast/products");
+    const resultsUrl = document.getElementById('product-grid').dataset.resultsUrl;
+        const response = await fetch(resultsUrl);
     const products = await response.json();
     allProducts = products.products;
     productsContainer = container;
@@ -87,8 +88,6 @@ document.addEventListener("click", async (event) => {
     if (!container) {
         return;
     }
-    // const response = await fetch("/bin/shopfast/products");
-    // const products = await response.json();
     if (event.target.classList.contains("add-to-cart-btn")) {
         const productId = event.target.dataset.id;
         let cart = JSON.parse(localStorage.getItem("cart")) || [];

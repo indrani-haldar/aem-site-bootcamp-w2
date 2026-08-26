@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     try {
-        const response = await fetch("/bin/shopfast/products");
+        const resultsUrl = document.getElementById('product-grid').dataset.resultsUrl;
+        const response = await fetch(resultsUrl);
         const data = await response.json();
         const products = data.products || [];
         const categories = [...new Set(products.map(product => product.category))];

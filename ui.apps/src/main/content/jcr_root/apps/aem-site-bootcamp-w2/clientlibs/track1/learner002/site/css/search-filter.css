@@ -64,9 +64,9 @@
 }
 
 .filter-chip.active {
-    background: #623a3a !important;
-    border-color: #623a3a !important;
-    color: #ffffff !important;
+    background: #623a3a;
+    border-color: #623a3a;
+    color: #ffffff;
 }
 
 

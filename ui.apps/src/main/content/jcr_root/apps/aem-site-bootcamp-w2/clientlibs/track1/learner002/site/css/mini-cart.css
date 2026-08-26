@@ -259,7 +259,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .mini-cart {
         width: calc(100vw - 20px);
         margin: 70px 10px 0;
