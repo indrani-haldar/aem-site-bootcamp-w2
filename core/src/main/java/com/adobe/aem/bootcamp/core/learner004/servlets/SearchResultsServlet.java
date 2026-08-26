@@ -11,87 +11,81 @@ import javax.servlet.Servlet;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
-@Component(
-        service = Servlet.class,
-        property = {
-                "sling.servlet.paths=/bin/searchhub/results",
-                "sling.servlet.methods=GET"
-        }
-)
+@Component(service = { Servlet.class })
+@SlingServletResourceTypes(resourceTypes = "aem-site-bootcamp-w2/components/learner004/searchresultsgrid", selectors = "searchresults", extensions = "json", methods = HttpConstants.METHOD_GET)
 public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
-    private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-    private static final String API_URL =
-            "https://fakestoreapi.com/products";
+        private static final String API_URL = "https://fakestoreapi.com/products";
 
-    @Override
-    protected void doGet(
-            SlingHttpServletRequest request,
-            SlingHttpServletResponse response)
-            throws IOException {
+        @Override
+        protected void doGet(
+                        SlingHttpServletRequest request,
+                        SlingHttpServletResponse response)
+                        throws IOException {
 
-        String query = request.getParameter("q");
+                String query = request.getParameter("q");
 
-        URL url = URI.create(API_URL).toURL();
+                HttpURLConnection connection = openConnection();
 
-        HttpURLConnection connection =
-                (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(5000);
+                connection.setReadTimeout(10000);
 
-        connection.setRequestMethod("GET");
+                BufferedReader reader = new BufferedReader(
+                                new InputStreamReader(
+                                                connection.getInputStream()));
 
-        BufferedReader reader =
-                new BufferedReader(
-                        new InputStreamReader(
-                                connection.getInputStream()));
+                StringBuilder apiResponse = new StringBuilder();
 
-        StringBuilder apiResponse =
-                new StringBuilder();
+                String line;
 
-        String line;
+                while ((line = reader.readLine()) != null) {
+                        apiResponse.append(line);
+                }
 
-        while ((line = reader.readLine()) != null) {
-            apiResponse.append(line);
+                reader.close();
+
+                ObjectMapper mapper = new ObjectMapper();
+
+                JsonNode products = mapper.readTree(
+                                apiResponse.toString());
+
+                ArrayNode filteredProducts = mapper.createArrayNode();
+
+                for (JsonNode product : products) {
+
+                        String title = product.path("title")
+                                        .asText();
+
+                        if (query == null
+                                        || query.isBlank()
+                                        || title.toLowerCase()
+                                                        .contains(query.toLowerCase())) {
+
+                                filteredProducts.add(product);
+                        }
+                }
+
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+
+                response.getWriter()
+                                .write(filteredProducts.toString());
         }
 
-        reader.close();
-
-        ObjectMapper mapper =
-                new ObjectMapper();
-
-        JsonNode products =
-                mapper.readTree(
-                        apiResponse.toString());
-
-        ArrayNode filteredProducts =
-                mapper.createArrayNode();
-
-        for (JsonNode product : products) {
-
-            String title =
-                    product.path("title")
-                           .asText();
-
-            if (query == null
-                    || query.isBlank()
-                    || title.toLowerCase()
-                            .contains(query.toLowerCase())) {
-
-                filteredProducts.add(product);
-            }
+        protected HttpURLConnection openConnection() throws IOException {
+                URL url = URI.create(API_URL).toURL();
+                return (HttpURLConnection) url.openConnection();
         }
-
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
-        response.getWriter()
-                .write(filteredProducts.toString());
-    }
 }
