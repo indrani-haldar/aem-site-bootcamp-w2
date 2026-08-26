@@ -1,0 +1,26 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.heading}"></sly>
+
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='aem-site-bootcamp-w2.site.product'}"/>
+</sly>
+<sly data-sly-use.model="com.adobe.aem.bootcamp.core.models.ProductDetails">
+    <div class="product-details-wrapper">
+        <h1>${model.heading}</h1>
+        <p>${model.description}</p>
+        <ul class="product-details-carts" data-sly-list.cart="${model.carts}">
+            <li class="product-details-cart">
+                <span class="product-details-cart-title">Cart #${cart.id} — User ${cart.userId} (${cart.date})</span>
+                <ul class="product-details-cart-items">
+                    <li class="product-details-cart-item" data-sly-list.item="${cart.products}">
+                        <sly data-sly-test="${item.product}">
+                            <img class="product-details-product-image" src="${item.product.image}" alt="${item.product.title}"/>
+                            <span>${item.product.title} — $${item.product.price} &times; ${item.quantity}</span>
+                        </sly>
+                        <sly data-sly-test="${!item.product}">Product #${item.productId} &times; ${item.quantity}</sly>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</sly>
