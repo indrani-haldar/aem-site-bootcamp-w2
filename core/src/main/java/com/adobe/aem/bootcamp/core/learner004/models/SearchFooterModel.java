@@ -13,7 +13,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class SearchFooterModel {
 
     @ValueMapValue
-    private String brandTitle; ;
+    private String brandTitle;
 
     @ValueMapValue
     private String navigationLabel;
