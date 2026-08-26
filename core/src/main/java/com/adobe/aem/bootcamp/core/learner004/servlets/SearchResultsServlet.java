@@ -96,4 +96,9 @@ public class SearchResultsServlet extends SlingSafeMethodsServlet {
 
                 return filteredProducts;
         }
+
+        protected HttpURLConnection openConnection() throws IOException {
+                URL url = URI.create(API_URL).toURL();
+                return (HttpURLConnection) url.openConnection();
+        }
 }
