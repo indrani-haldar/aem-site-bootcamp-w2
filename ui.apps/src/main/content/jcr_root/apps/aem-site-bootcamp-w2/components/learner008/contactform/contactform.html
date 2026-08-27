@@ -1,0 +1,24 @@
+<section class="cmp-learner008-contact" data-sly-use.model="com.adobe.aem.bootcamp.core.learner008.models.Learner008ContactFormModel" data-cmp-is="shopfast-contactform" data-success-message="${model.successMessage}">
+    <h2 class="cmp-learner008-contact__title">${model.heading}</h2>
+    <p class="cmp-learner008-contact__description">${model.description}</p>
+
+    <form class="cmp-learner008-contact__form" novalidate>
+        <div class="cmp-learner008-contact__field">
+            <label for="learner008-contact-name">${model.nameLabel}</label>
+            <input id="learner008-contact-name" type="text" data-cmp-hook-shopfast-contact="name"/>
+        </div>
+
+        <div class="cmp-learner008-contact__field">
+            <label for="learner008-contact-email">${model.emailLabel}</label>
+            <input id="learner008-contact-email" type="email" data-cmp-hook-shopfast-contact="email"/>
+        </div>
+
+        <div class="cmp-learner008-contact__field">
+            <label for="learner008-contact-message">${model.messageLabel}</label>
+            <textarea id="learner008-contact-message" rows="5" data-cmp-hook-shopfast-contact="message"></textarea>
+        </div>
+
+        <p class="cmp-learner008-contact__status" data-cmp-hook-shopfast-contact="status" aria-live="polite"></p>
+        <button class="cmp-learner008-contact__submit" type="submit">${model.buttonLabel}</button>
+    </form>
+</section>

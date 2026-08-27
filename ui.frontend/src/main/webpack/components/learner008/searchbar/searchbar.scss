@@ -1,0 +1,24 @@
+.cmp-learner008-searchbar {
+    margin: 1rem auto 0;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: min(calc(100% - 2rem), 1440px);
+}
+
+.cmp-learner008-searchbar__label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+    color: #12304c;
+}
+
+.cmp-learner008-searchbar__input {
+    width: 100%;
+    border: 1px solid #c9d6e5;
+    border-radius: 8px;
+    padding: 0.7rem;
+    box-sizing: border-box;
+}
