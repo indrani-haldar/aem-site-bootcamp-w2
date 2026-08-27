@@ -1,0 +1,13 @@
+<div data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></div>
+
+<section class="qc-related-products" data-cmp-is="qc-related-products"
+    data-title="${properties.title || 'You Might Also Like'}"
+    data-max-items="${properties.maxItems || '5'}"
+    data-product-detail-page="${properties.productDetailPagePath || '/content/aem-site-bootcamp-w2/us/en/PDP'}">
+    <h2 class="qc-related-products__title">${properties.title || 'You Might Also Like'}</h2>
+    <div class="qc-related-products__track" role="list"></div>
+    <p class="qc-related-products__status" aria-live="polite"></p>
+</section>
+
+<sly data-sly-call="${clientlib.css @ categories='learner009.relatedproductscarousel'}"></sly>
+<sly data-sly-call="${clientlib.js @ categories='learner009.relatedproductscarousel'}"></sly>

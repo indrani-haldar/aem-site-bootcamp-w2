@@ -6,6 +6,9 @@
         <exclude pattern="/content/dam/aem-site-bootcamp-w2(/.*)?"/>
         <include pattern="/content/dam/aem-site-bootcamp-w2/jcr:content(/.*)?"/>
     </filter>
+    <filter root="/content/dam/aem-site-bootcamp-w2/learner009" mode="merge"/>
+    <filter root="/content/dam/aem-site-bootcamp-w2/learner009/policies/shipping-policy" mode="merge"/>
+    <filter root="/content/dam/aem-site-bootcamp-w2/learner009/policies/returns-policy" mode="merge"/>
     <filter root="/content/dam/aem-site-bootcamp-w2/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/aem-site-bootcamp-w2" mode="merge"/>
 </workspaceFilter>

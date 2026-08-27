@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="QuickCart Header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <brandLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Brand Label"
+                        name="./brandLabel"
+                        value="QUICKCART"/>
+                    <brandLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Brand Link"
+                        name="./brandLink"
+                        rootPath="/content/aem-site-bootcamp-w2"/>
+                    <centerButtonOneLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Center Button 1 Label"
+                        name="./centerButtonOneLabel"
+                        required="{Boolean}true"/>
+                    <centerButtonOneLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Center Button 1 Link"
+                        name="./centerButtonOneLink"
+                        rootPath="/content/aem-site-bootcamp-w2"
+                        required="{Boolean}true"/>
+                    <centerButtonTwoLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Center Button 2 Label"
+                        name="./centerButtonTwoLabel"
+                        required="{Boolean}true"/>
+                    <centerButtonTwoLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Center Button 2 Link"
+                        name="./centerButtonTwoLink"
+                        rootPath="/content/aem-site-bootcamp-w2"
+                        required="{Boolean}true"/>
+                    <cartButtonLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Right Cart Button Label"
+                        name="./cartButtonLabel"
+                        value="Cart"/>
+                    <cartButtonLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Right Cart Button Link"
+                        name="./cartButtonLink"
+                        rootPath="/content/aem-site-bootcamp-w2"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

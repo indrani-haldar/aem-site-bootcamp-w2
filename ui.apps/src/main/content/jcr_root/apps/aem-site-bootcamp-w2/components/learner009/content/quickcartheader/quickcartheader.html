@@ -1,0 +1,49 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></sly>
+
+<header class="cmp-quickcart-header" data-cmp-is="quickcartheader">
+    <a class="cmp-quickcart-header__brand" href="${properties.brandLink || '#'}">${properties.brandLabel || 'QUICKCART'}</a>
+
+    <nav class="cmp-quickcart-header__center" aria-label="QuickCart main navigation">
+        <a class="cmp-quickcart-header__center-link"
+            href="${properties.centerButtonOneLink || '#'}"
+            data-sly-test="${properties.centerButtonOneLabel}">
+            ${properties.centerButtonOneLabel}
+        </a>
+        <a class="cmp-quickcart-header__center-link"
+            href="${properties.centerButtonTwoLink || '#'}"
+            data-sly-test="${properties.centerButtonTwoLabel}">
+            ${properties.centerButtonTwoLabel}
+        </a>
+    </nav>
+
+    <a class="cmp-quickcart-header__cart-action"
+        href="${properties.cartButtonLink || '#'}"
+        aria-expanded="false"
+        aria-controls="quickcart-mini-cart"
+        data-action="toggle-mini-cart">
+        ${properties.cartButtonLabel || 'Cart'}
+        <span class="cmp-quickcart-header__cart-count" aria-hidden="true">0</span>
+    </a>
+
+    <aside id="quickcart-mini-cart"
+        class="cmp-quickcart-header__mini-cart"
+        data-checkout-path="${properties.cartButtonLink || '/content/aem-site-bootcamp-w2/us/en/cart.html'}"
+        data-view-cart-path="${properties.cartButtonLink || '/content/aem-site-bootcamp-w2/us/en/cart.html'}"
+        aria-label="Mini cart"
+        hidden>
+        <h3 class="cmp-quickcart-header__mini-cart-title">Your Cart</h3>
+        <p class="cmp-quickcart-header__mini-cart-empty" hidden>Your cart is empty.</p>
+        <ul class="cmp-quickcart-header__mini-cart-list" aria-live="polite"></ul>
+        <div class="cmp-quickcart-header__mini-cart-footer">
+            <p class="cmp-quickcart-header__mini-cart-subtotal">Subtotal: <strong class="cmp-quickcart-header__mini-cart-subtotal-value">$0.00</strong></p>
+            <div class="cmp-quickcart-header__mini-cart-actions">
+                <a class="cmp-quickcart-header__mini-cart-link" href="${properties.cartButtonLink || '/content/aem-site-bootcamp-w2/us/en/cart.html'}">View Cart</a>
+                <a class="cmp-quickcart-header__mini-cart-checkout" href="${properties.cartButtonLink || '/content/aem-site-bootcamp-w2/us/en/cart.html'}">Checkout</a>
+            </div>
+        </div>
+    </aside>
+</header>
+
+<sly data-sly-call="${clientlib.css @ categories='learner009.quickcartheader'}"></sly>
+<sly data-sly-call="${clientlib.js @ categories='learner009.quickcartheader'}"></sly>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        contentFragment="{Boolean}true"
+        cq:name="returns-policy"
+        dam:assetState="processed">
+        <metadata
+            jcr:primaryType="nt:unstructured"
+            cq:model="/conf/aem-site-bootcamp-w2/settings/dam/cfm/models/quickcart-policy"
+            dc:title="Returns Policy"/>
+        <data
+            jcr:primaryType="nt:unstructured"
+            cq:model="/conf/aem-site-bootcamp-w2/settings/dam/cfm/models/quickcart-policy">
+            <master
+                jcr:primaryType="nt:unstructured"
+                title="Returns Policy"
+                body="Items can be returned within 30 days in original condition. Refunds are issued to the original payment method after inspection."/>
+        </data>
+    </jcr:content>
+</jcr:root>
