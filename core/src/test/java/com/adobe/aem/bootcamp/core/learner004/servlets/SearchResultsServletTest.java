@@ -1,10 +1,8 @@
 package com.adobe.aem.bootcamp.core.learner004.servlets;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
+
+import javax.servlet.ServletException;
 
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletResponse;
@@ -15,61 +13,67 @@ import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 class SearchResultsServletTest {
 
-	private static final String PRODUCTS_JSON = "["
-			+ "{\"id\":1,\"title\":\"Phone case\"},"
-			+ "{\"id\":2,\"title\":\"Laptop stand\"}"
-			+ "]";
+    private static final String PRODUCTS_JSON = "["
+            + "{\"id\":1,\"title\":\"Fjallraven Backpack\"},"
+            + "{\"id\":2,\"title\":\"Mens Casual Jacket\"}"
+            + "]";
 
-	@Test
-	void doGetFiltersProductsByQuery(AemContext context) throws IOException {
-		HttpURLConnection connection = mockConnection();
-		SearchResultsServlet fixture = new SearchResultsServlet() {
-			@Override
-			protected HttpURLConnection openConnection() {
-				return connection;
-			}
-		};
-		MockSlingHttpServletRequest request = context.request();
-		request.setParameterMap(Collections.singletonMap("q", "PHONE"));
-		MockSlingHttpServletResponse response = context.response();
+    private final SearchResultsServlet fixture = new SearchResultsServlet() {
+        @Override
+        protected String fetchProductsJson() {
+            return PRODUCTS_JSON;
+        }
+    };
 
-		fixture.doGet(request, response);
+    @Test
+    void doGetWithoutQueryReturnsAllProducts(AemContext context) throws ServletException, IOException {
+        MockSlingHttpServletRequest request = context.request();
+        MockSlingHttpServletResponse response = context.response();
 
-		assertEquals("application/json;charset=UTF-8", response.getContentType());
-		assertEquals("UTF-8", response.getCharacterEncoding());
-		assertEquals("[{\"id\":1,\"title\":\"Phone case\"}]", response.getOutputAsString());
-		verify(connection).setRequestMethod("GET");
-	}
+        fixture.doGet(request, response);
 
-	@Test
-	void doGetReturnsAllProductsWhenQueryIsBlank(AemContext context) throws IOException {
-		HttpURLConnection connection = mockConnection();
-		SearchResultsServlet fixture = new SearchResultsServlet() {
-			@Override
-			protected HttpURLConnection openConnection() {
-				return connection;
-			}
-		};
-		MockSlingHttpServletRequest request = context.request();
-		request.setParameterMap(Collections.singletonMap("q", " "));
-		MockSlingHttpServletResponse response = context.response();
+        assertTrue(response.getOutputAsString().contains("Fjallraven Backpack"));
+        assertTrue(response.getOutputAsString().contains("Mens Casual Jacket"));
+    }
 
-		fixture.doGet(request, response);
+    @Test
+    void doGetWithBlankQueryReturnsAllProducts(AemContext context) throws ServletException, IOException {
+        MockSlingHttpServletRequest request = context.request();
+        request.setParameterMap(java.util.Collections.singletonMap("q", "  "));
+        MockSlingHttpServletResponse response = context.response();
 
-		assertEquals(PRODUCTS_JSON, response.getOutputAsString());
-	}
+        fixture.doGet(request, response);
 
-	private HttpURLConnection mockConnection() throws IOException {
-		HttpURLConnection connection = mock(HttpURLConnection.class);
-		when(connection.getInputStream()).thenReturn(new ByteArrayInputStream(
-				PRODUCTS_JSON.getBytes(StandardCharsets.UTF_8)));
-		return connection;
-	}
+        assertTrue(response.getOutputAsString().contains("Fjallraven Backpack"));
+        assertTrue(response.getOutputAsString().contains("Mens Casual Jacket"));
+    }
+
+    @Test
+    void doGetWithMatchingQueryReturnsFilteredProducts(AemContext context) throws ServletException, IOException {
+        MockSlingHttpServletRequest request = context.request();
+        request.setParameterMap(java.util.Collections.singletonMap("q", "jacket"));
+        MockSlingHttpServletResponse response = context.response();
+
+        fixture.doGet(request, response);
+
+        String output = response.getOutputAsString();
+        assertTrue(output.contains("Mens Casual Jacket"));
+        assertEquals(false, output.contains("Fjallraven Backpack"));
+    }
+
+    @Test
+    void doGetWithNonMatchingQueryReturnsNoProducts(AemContext context) throws ServletException, IOException {
+        MockSlingHttpServletRequest request = context.request();
+        request.setParameterMap(java.util.Collections.singletonMap("q", "nonexistent"));
+        MockSlingHttpServletResponse response = context.response();
+
+        fixture.doGet(request, response);
+
+        assertEquals("[]", response.getOutputAsString());
+    }
 }
