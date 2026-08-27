@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="nt:unstructured" jcr:title="ShopFast Catalog" sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <mode jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/select" fieldLabel="Catalog view" name="./mode">
+                <items jcr:primaryType="nt:unstructured">
+                    <shop jcr:primaryType="nt:unstructured" text="Full catalog" value="shop"/>
+                    <featured jcr:primaryType="nt:unstructured" text="Featured products" value="featured"/>
+                </items>
+            </mode>
+        </items>
+    </content>
+</jcr:root>

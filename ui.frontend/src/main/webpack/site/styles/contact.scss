@@ -1,0 +1,50 @@
+body:has(form.cmp-form) .cmp-title,
+body:has(form.cmp-form) .cmp-text,
+body:has(form.cmp-form) form.cmp-form {
+    width: min(100% - 2rem, 28rem);
+    max-width: 28rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body:has(form.cmp-form) form.cmp-form {
+    padding: 1rem 0 2.5rem;
+}
+
+body:has(form.cmp-form) .cmp-form-text {
+    margin: .85rem 0;
+}
+
+body:has(form.cmp-form) .cmp-form-text label {
+    display: block;
+    margin-bottom: .35rem;
+    color: #182028;
+    font: 600 .75rem sans-serif;
+}
+
+body:has(form.cmp-form) .cmp-form-text input,
+body:has(form.cmp-form) .cmp-form-text textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #aeb7be;
+    border-radius: 4px;
+    padding: .65rem .75rem;
+    font: .85rem sans-serif;
+}
+
+body:has(form.cmp-form) .cmp-form-text textarea {
+    min-height: 7rem;
+    resize: vertical;
+}
+
+body:has(form.cmp-form) .cmp-form-button {
+    width: 100%;
+    margin-top: .35rem;
+    border: 0;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    padding: .75rem;
+    font: 600 .78rem sans-serif;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+    <jcr:content cq:template="/conf/aem-site-bootcamp-w2/settings/wcm/templates/track1-learner001-tania" jcr:primaryType="cq:PageContent" jcr:title="ShopFast Contact" sling:resourceType="aem-site-bootcamp-w2/components/page">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/container" layout="responsiveGrid">
+            <body jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/container" layout="responsiveGrid">
+                <title jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/title" jcr:title="Get in Touch" type="h1"/>
+                <intro jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/text" textIsRich="true" text="We would love to hear from you. Fill out the form below."/>
+                <form jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/form/container" actionType="foundation/components/form/actions/store">
+                    <name jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/form/text" fieldName="name" name="name" jcr:title="Name" type="text" required="true"/>
+                    <email jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/form/text" fieldName="email" name="email" jcr:title="Email" type="email" required="true"/>
+                    <message jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/form/text" fieldName="message" name="message" jcr:title="Message" type="textarea" required="true" rows="4"/>
+                    <submit jcr:primaryType="nt:unstructured" sling:resourceType="aem-site-bootcamp-w2/components/form/button" name="submit" jcr:title="Send Message" type="submit"/>
+                </form>
+            </body>
+        </root>
+    </jcr:content>
+</jcr:root>
