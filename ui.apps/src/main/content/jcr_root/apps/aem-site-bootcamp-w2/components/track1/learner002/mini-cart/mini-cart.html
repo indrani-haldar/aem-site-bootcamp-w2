@@ -1,0 +1,48 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='bootcamp.track1.learner002.site'}" />
+<sly data-sly-call="${clientlib.js @ categories='bootcamp.track1.learner002.site'}" />
+
+<div class="mini-cart-overlay">
+    <div class="mini-cart">
+        <div class="mini-cart-header">
+            <h2>
+                Shopping Cart
+            </h2>
+            <button class="close-cart-btn">
+                ✕
+            </button>
+        </div>
+        <div class="mini-cart-content">
+        </div>
+        <div class="mini-cart-footer">
+            <div class="cart-subtotal-row">
+                <span>
+                    Subtotal
+                </span>
+                <span class="cart-subtotal">
+                    ₹0
+                </span>
+            </div>
+            <button class="checkout-btn">
+                Checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="checkout-modal">
+    <div class="checkout-modal-content">
+        <div class="success-icon">
+            ✅
+        </div>
+        <h2>
+            Order Placed Successfully!
+        </h2>
+        <p>
+            Thank you for shopping with ShopFast.
+        </p>
+        <button class="close-modal-btn">
+            Continue Shopping
+        </button>
+    </div>
+</div>
