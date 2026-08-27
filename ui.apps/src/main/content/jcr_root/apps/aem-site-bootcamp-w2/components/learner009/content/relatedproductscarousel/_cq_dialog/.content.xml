@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Related Products Carousel"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Section Title"
+                name="./title"
+                value="You Might Also Like"/>
+            <productDetailPagePath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Product Detail Page Path"
+                fieldDescription="Base PDP path used to link related products, e.g. /content/.../PDP"
+                name="./productDetailPagePath"
+                rootPath="/content/aem-site-bootcamp-w2"
+                required="{Boolean}true"/>
+            <maxItems
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="Maximum Cards"
+                name="./maxItems"
+                min="1"
+                max="5"
+                value="5"/>
+        </items>
+    </content>
+</jcr:root>

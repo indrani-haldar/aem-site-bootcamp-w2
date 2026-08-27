@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Component"
-    jcr:title="Header"
-    jcr:description="Site header with logo, site title and tagline"
-    componentGroup="Bootcamp - Track 3"/>
+    jcr:title="QuickCart Product Detail Hero"
+    jcr:description="Servlet-backed product detail hero for QuickCart"
+    componentGroup="Bootcamp - Track 2"/>

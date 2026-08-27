@@ -1,0 +1,35 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<section class="qc-cart-summary" data-cmp-is="qc-cart-summary"
+    data-continue-shopping-path="${properties.continueShoppingPath || '/content/aem-site-bootcamp-w2/us/en.html'}"
+    data-checkout-path="${properties.checkoutPath || '/content/aem-site-bootcamp-w2/us/en/cart.html'}">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = false}"></sly>
+    <h2 class="qc-cart-summary__title">${properties.title || 'Your Cart'}</h2>
+
+    <div class="qc-cart-summary__table-wrap" role="region" aria-label="Cart summary">
+        <table class="qc-cart-summary__table">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col" class="qc-cart-summary__actions-header">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="qc-cart-summary__body"></tbody>
+        </table>
+    </div>
+
+    <div class="qc-cart-summary__footer">
+        <a class="qc-cart-summary__continue" href="${properties.continueShoppingPath || '/content/aem-site-bootcamp-w2/us/en.html'}">&larr; Continue Shopping</a>
+        <div class="qc-cart-summary__totals">
+            <p class="qc-cart-summary__subtotal">Subtotal: <strong class="qc-cart-summary__subtotal-value">$0.00</strong></p>
+            <a class="qc-cart-summary__checkout" href="${properties.checkoutPath || '/content/aem-site-bootcamp-w2/us/en/cart.html'}">Checkout</a>
+        </div>
+    </div>
+
+    <p class="qc-cart-summary__empty" hidden>Your cart is empty.</p>
+</section>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories='learner009.cartsummarytable'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.js @ categories='learner009.cartsummarytable'}"></sly>
