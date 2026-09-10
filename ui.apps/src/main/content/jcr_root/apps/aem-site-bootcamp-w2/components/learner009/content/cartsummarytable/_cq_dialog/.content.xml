@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Cart Summary Table"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Section Title"
+                name="./title"
+                value="Your Cart"/>
+            <continueShoppingPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Continue Shopping Link"
+                fieldDescription="Target Product Detail page"
+                name="./continueShoppingPath"
+                rootPath="/content/aem-site-bootcamp-w2"
+                required="{Boolean}true"/>
+            <checkoutPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Checkout Link"
+                fieldDescription="Target checkout page"
+                name="./checkoutPath"
+                rootPath="/content/aem-site-bootcamp-w2"
+                required="{Boolean}false"/>
+        </items>
+    </content>
+</jcr:root>

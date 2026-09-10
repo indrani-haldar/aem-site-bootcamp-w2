@@ -1,0 +1,30 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<div data-sly-use.model="com.adobe.aem.bootcamp.core.models.AccordionModel" class="qc-accordion" data-cmp-is="qc-accordion">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = model.accordionItems.size == 0}"></sly>
+    <div class="qc-accordion__items" data-sly-list.item="${model.accordionItems}">
+        <section class="qc-accordion__item" data-question="${item.question @ context='attribute'}">
+            <h3 class="qc-accordion__heading">
+                <button
+                    type="button"
+                    class="qc-accordion__trigger"
+                    aria-expanded="false"
+                    aria-controls="${model.idPrefix}-panel-${itemList.count}"
+                    id="${model.idPrefix}-trigger-${itemList.count}">
+                    <span>${item.question}</span>
+                </button>
+            </h3>
+            <div
+                class="qc-accordion__panel"
+                id="${model.idPrefix}-panel-${itemList.count}"
+                role="region"
+                aria-labelledby="${model.idPrefix}-trigger-${itemList.count}"
+                hidden>
+                <div class="qc-accordion__panel-content">${item.resolvedAnswer @ context='html'}</div>
+            </div>
+        </section>
+    </div>
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories='capstoneweek2.accordion'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.js @ categories='capstoneweek2.accordion'}"></sly>
