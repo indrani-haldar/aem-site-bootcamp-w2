@@ -18,7 +18,7 @@
             return Promise.resolve(null);
         }
 
-        var proxyUrl = "/bin/learner009/quickcart/product.json?productId=" + encodeURIComponent(productId);
+        var proxyUrl = "/bin/learner010/quickcart/product.json?productId=" + encodeURIComponent(productId);
         return fetch(proxyUrl, { credentials: "same-origin" })
             .then(function (response) {
                 if (!response.ok) {

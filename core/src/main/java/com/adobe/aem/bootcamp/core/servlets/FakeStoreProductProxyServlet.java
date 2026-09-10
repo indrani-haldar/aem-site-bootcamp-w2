@@ -17,7 +17,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 @Component(service = {Servlet.class}, property = {
-    "sling.servlet.paths=/bin/learner009/quickcart/product",
+    "sling.servlet.paths=/bin/learner010/quickcart/product",
     "sling.servlet.methods=" + HttpConstants.METHOD_GET,
     "sling.servlet.extensions=json"
 })

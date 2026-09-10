@@ -32,7 +32,7 @@
                             fieldLabel="Policy Content Fragment (optional)"
                             fieldDescription="Use for shared Shipping/Returns policy content."
                             name="./policyFragmentPath"
-                            rootPath="/content/dam/aem-site-bootcamp-w2/learner009"
+                            rootPath="/content/dam/aem-site-bootcamp-w2/learner010"
                             filter="fragment"/>
                     </items>
                 </field>

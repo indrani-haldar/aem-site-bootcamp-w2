@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ProductDetailHeroModel {
 
-    private static final String PROXY_PATH = "/bin/learner009/quickcart/product.json";
+    private static final String PROXY_PATH = "/bin/learner010/quickcart/product.json";
     private static final String DIRECT_API_BASE = "https://fakestoreapi.com/products/";
 
     @Self
