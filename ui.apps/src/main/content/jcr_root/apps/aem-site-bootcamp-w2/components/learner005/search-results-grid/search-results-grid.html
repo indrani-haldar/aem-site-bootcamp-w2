@@ -1,0 +1,17 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='learner005.searchresultsgrid'}"/> 
+<sly data-sly-call="${clientlib.all @ categories='learner005.addtocartbadge'}"/>
+
+<div data-cmp-is="searchresultsgrid" class="cmp-search-results-grid-container">
+
+     <div id="loading">
+         Loading products...
+     </div>
+     <div id="emptyState"
+          style="display:none">
+     </div>
+     <div id="resultsHeader">
+     </div>
+     <div id="resultsContainer" class="cmp-search-results-grid">
+     </div>
+</div>
