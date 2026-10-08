@@ -1,0 +1,104 @@
+.qc-product-detail-hero {
+    margin: 2rem 0;
+    border: 1px solid #dbe1eb;
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 1.25rem;
+}
+
+.qc-product-detail-hero__content {
+    display: grid;
+    grid-template-columns: minmax(14rem, 24rem) 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.qc-product-detail-hero__media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    background: #f9fbff;
+}
+
+.qc-product-detail-hero__category {
+    margin: 0 0 0.5rem;
+    color: #6b778c;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+}
+
+.qc-product-detail-hero__title {
+    margin: 0 0 0.5rem;
+}
+
+.qc-product-detail-hero__price {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1b4d8a;
+}
+
+.qc-product-detail-hero__description {
+    margin: 0 0 1.25rem;
+    line-height: 1.5;
+}
+
+.qc-product-detail-hero__qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.qc-product-detail-hero__qty-btn {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #c0c8d6;
+    border-radius: 0.25rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.qc-product-detail-hero__qty-input {
+    width: 3rem;
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #c0c8d6;
+    border-radius: 0.25rem;
+}
+
+.qc-product-detail-hero__add-btn {
+    display: inline-block;
+    margin-left: 0.75rem;
+    padding: 0.55rem 1rem;
+    border: 0;
+    border-radius: 0.35rem;
+    background: #111827;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qc-product-detail-hero__status {
+    margin-top: 0.75rem;
+    min-height: 1rem;
+    color: #1b4d8a;
+}
+
+.qc-product-detail-hero__error {
+    margin: 0;
+    color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+    .qc-product-detail-hero__content {
+        grid-template-columns: 1fr;
+    }
+
+    .qc-product-detail-hero__add-btn {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+}

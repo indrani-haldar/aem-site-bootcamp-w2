@@ -1,0 +1,2 @@
+#base=js
+cartsummarytable.js

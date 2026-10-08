@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="QuickCart Footer"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <brandLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Brand Label"
+                        name="./brandLabel"
+                        value="QUICKCART"/>
+                    <navigateHeading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Navigate Heading"
+                        name="./navigateHeading"
+                        value="NAVIGATE"/>
+                    <navigateLinkOneLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Navigate Link 1 Label"
+                        name="./navigateLinkOneLabel"
+                        value="Product"/>
+                    <navigateLinkOneUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Navigate Link 1 URL"
+                        fieldDescription="Relative (/content/...) or absolute (https://...)"
+                        name="./navigateLinkOneUrl"/>
+                    <navigateLinkTwoLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Navigate Link 2 Label"
+                        name="./navigateLinkTwoLabel"
+                        value="Cart"/>
+                    <navigateLinkTwoUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Navigate Link 2 URL"
+                        fieldDescription="Relative (/content/...) or absolute (https://...)"
+                        name="./navigateLinkTwoUrl"/>
+                    <resourcesHeading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Resources Heading"
+                        name="./resourcesHeading"
+                        value="RESOURCES"/>
+                    <resourcesLinkOneLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Resources Link Label"
+                        name="./resourcesLinkOneLabel"
+                        value="Shipping"/>
+                    <resourcesLinkOneUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Resources Link URL"
+                        fieldDescription="Relative (/content/...) or absolute (https://...)"
+                        name="./resourcesLinkOneUrl"/>
+                    <connectHeading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Connect Heading"
+                        name="./connectHeading"
+                        value="CONNECT"/>
+                    <connectLinkOneLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Connect Link Label"
+                        name="./connectLinkOneLabel"
+                        value="LinkedIn"/>
+                    <connectLinkOneUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Connect Link URL"
+                        fieldDescription="Relative (/content/...) or absolute (https://...)"
+                        name="./connectLinkOneUrl"/>
+                    <copyrightText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Copyright Text"
+                        name="./copyrightText"
+                        value="© 2026 QuickCart"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
