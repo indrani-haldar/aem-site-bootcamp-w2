@@ -1,0 +1,30 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></sly>
+
+<footer class="cmp-quickcart-footer" data-cmp-is="quickcartfooter">
+    <div class="cmp-quickcart-footer__top">
+        <div class="cmp-quickcart-footer__brand">${properties.brandLabel || 'QUICKCART'}</div>
+
+        <div class="cmp-quickcart-footer__section">
+            <h3 class="cmp-quickcart-footer__heading">${properties.navigateHeading || 'NAVIGATE'}</h3>
+            <a class="cmp-quickcart-footer__link" href="${properties.navigateLinkOneUrl || '#'}" data-sly-test="${properties.navigateLinkOneLabel}">${properties.navigateLinkOneLabel}</a>
+            <a class="cmp-quickcart-footer__link" href="${properties.navigateLinkTwoUrl || '#'}" data-sly-test="${properties.navigateLinkTwoLabel}">${properties.navigateLinkTwoLabel}</a>
+        </div>
+
+        <div class="cmp-quickcart-footer__section">
+            <h3 class="cmp-quickcart-footer__heading">${properties.resourcesHeading || 'RESOURCES'}</h3>
+            <a class="cmp-quickcart-footer__link" href="${properties.resourcesLinkOneUrl || '#'}" data-sly-test="${properties.resourcesLinkOneLabel}">${properties.resourcesLinkOneLabel}</a>
+        </div>
+
+        <div class="cmp-quickcart-footer__section">
+            <h3 class="cmp-quickcart-footer__heading">${properties.connectHeading || 'CONNECT'}</h3>
+            <a class="cmp-quickcart-footer__link" href="${properties.connectLinkOneUrl || '#'}" data-sly-test="${properties.connectLinkOneLabel}">${properties.connectLinkOneLabel}</a>
+        </div>
+    </div>
+
+    <div class="cmp-quickcart-footer__bottom">
+        ${properties.copyrightText || '© 2026 QuickCart'}
+    </div>
+</footer>
+
+<sly data-sly-call="${clientlib.css @ categories='learner009.quickcartfooter'}"></sly>
+<sly data-sly-call="${clientlib.js @ categories='learner009.quickcartfooter'}"></sly>

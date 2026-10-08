@@ -1,0 +1,67 @@
+.qc-accordion {
+    border: 1px solid #9ea7b3;
+    border-radius: 0.35rem;
+    background: #f3f6fa;
+    overflow: hidden;
+}
+
+.qc-accordion__item + .qc-accordion__item {
+    border-top: 1px solid #c6ceda;
+}
+
+.qc-accordion__heading {
+    margin: 0;
+}
+
+.qc-accordion__trigger {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    min-height: 3.25rem;
+    border: 0;
+    background: #f3f6fa;
+    text-align: left;
+    font: 700 1rem/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.qc-accordion__trigger::after {
+    content: "";
+}
+
+.qc-accordion__trigger[aria-expanded="true"]::after {
+    content: "";
+}
+
+.qc-accordion__trigger span {
+    display: inline-block;
+    letter-spacing: 0.01em;
+}
+
+.qc-accordion__panel-content {
+    padding: 0 1.25rem 1rem;
+    color: #1e293b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: #f3f6fa;
+}
+
+@media (max-width: 768px) {
+    .qc-accordion__trigger {
+        font-size: 0.95rem;
+        padding: 0.55rem 1rem;
+        min-height: 3rem;
+    }
+
+    .qc-accordion__trigger::after {
+        content: "";
+    }
+
+    .qc-accordion__panel-content {
+        font-size: 0.95rem;
+        padding: 0 1rem 1rem;
+    }
+}
