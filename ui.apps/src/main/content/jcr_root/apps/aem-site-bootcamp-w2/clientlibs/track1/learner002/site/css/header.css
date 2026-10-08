@@ -1,0 +1,124 @@
+.shopfast-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    padding: 14px 40px;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #623a3a;
+}
+
+.header-nav {
+    display: flex;
+    gap: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+}
+
+.cart-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+}
+
+.header-nav a:hover {
+    color: #623a3a;
+}
+
+.header-nav a.active {
+    color: #623a3a;
+    border-bottom: 3px solid #623a3a;
+    padding-bottom: 6px;
+    font-weight: 700;
+}
+
+.cart-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #623a3a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(98, 58, 58, 0.35);
+}
+
+body {
+    padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+    .shopfast-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 12px 16px;
+    }
+
+    .logo {
+        width: auto;
+        text-align: left;
+        font-size: 22px;
+    }
+
+    .cart-btn {
+        position: static;
+        margin-left: auto;
+    }
+
+    .header-nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 12px;
+        gap: 20px;
+        order: 3;
+    }
+
+    .cart-count {
+        top: 4px;
+        right: 4px;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        z-index: 10;
+    }
+}

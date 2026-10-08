@@ -1,0 +1,6 @@
+js/product-grid.js
+js/header.js
+js/search-filter.js
+js/product-list.js
+js/mini-cart.js
+js/contact-form.js
