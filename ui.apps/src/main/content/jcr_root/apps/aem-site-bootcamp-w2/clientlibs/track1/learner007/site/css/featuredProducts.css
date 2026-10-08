@@ -1,0 +1,42 @@
+.row{display:flex;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;}
+.row::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+[class*="col-"]{
+width: 100%;
+padding-left: 15px;
+padding-right: 15px;
+box-sizing: border-box; margin-bottom: 20px;
+}
+
+.featured-Products{width: 100%;float: left;}
+.featured-Products-grid{position: relative;}
+.product-container{width: 100%;margin: 0 auto;padding: 0 15px;}
+.featured-Products-card{display: flex;flex-direction: column;height: 100%;overflow: hidden;border-radius:8px;border:1px solid var(--card-border-color);
+    background: var(--card-bg);color: var(--card-text);box-shadow: var(--card-shadow);}
+.featured-Products-card:hover{background: var(--card-hover-bg);box-shadow: var(--card-hover-shadow);border-color: var(--card-hover-border-color);}
+.featured-Products-card_image{height: 200px;}
+.featured-Products-card_image_img{width:100%;height: 100%;object-fit: cover;display: block;}
+.featured-Products-card_image_img img{width: 100%;height: 100%;}
+.featured-Products-card_body{flex: 1;display: flex;flex-direction: column;padding: 15px;}
+.featured-Products-card_body h3{font-size: var(--font-size-lg); overflow: hidden;text-overflow: ellipsis;white-space:nowrap;margin-bottom: 0;}
+.featured-Products-card_body span{font-size: calc(var(--font-size-xl) + 4px);font-weight: var(--font-weight-semibold);margin:10px 0;}
+.featured-Products-card_body button{margin-top: auto;background: var(--button-black-bg);border-radius:6px;border:1px solid var(--button-black-bg);padding:6px 12px;cursor: pointer;color: var(--button-black-text);transition:background-color 0.3s ease;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);}
+.featured-Products-card_body button:hover{background:var(--button-black-hover-bg);border: 1px solid var(--button-black-hover-bg); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);}
+
+@media (min-width:768px){
+.col-1 { width: 8.333333%; }
+.col-2 { width: 16.666667%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.333333%; }
+.col-5 { width: 41.666667%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.333333%; }
+.col-8 { width: 66.666667%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.333333%; }
+.col-11 { width: 91.666667%; }
+.col-12 { width: 100%; }
+}
