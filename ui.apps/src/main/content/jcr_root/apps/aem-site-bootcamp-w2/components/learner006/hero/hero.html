@@ -1,0 +1,24 @@
+<div
+  data-sly-use.model="com.adobe.aem.bootcamp.core.learner006.models.HeroModel"
+  class="hero"
+  data-cmp-is="hero"
+  data-background-image="${model.backgroundImage}"
+>
+  <div class="hero__content">
+    <h1>${model.heading}</h1>
+
+    <p>${model.subtext}</p>
+
+    <input
+      type="search"
+      id="searchQuery"
+      class="hero__search-input"
+      placeholder="Search products..."
+      aria-label="Search Products"
+    />
+
+    <button type="button" id="searchButton" class="hero__search-button">
+      Search
+    </button>
+  </div>
+</div>

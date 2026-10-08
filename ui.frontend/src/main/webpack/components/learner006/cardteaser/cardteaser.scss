@@ -1,0 +1,41 @@
+.cardteaser {
+    width: 450px;
+    margin: 20px auto;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: #fff;
+    padding: 20px;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cardteaser__body {
+    width: 100%;
+}
+
+.cardteaser__body h3 {
+    margin-bottom: 10px;
+}
+
+.cardteaser__description {
+    margin-bottom: 15px;
+}
+
+.cardteaser__price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cardteaser__btn {
+    width: 80%;
+    margin: 15px auto 0;
+    display: block;
+}
+.cardteaser.aem-GridColumn {
+    display: flex;
+    justify-content: center;
+}
