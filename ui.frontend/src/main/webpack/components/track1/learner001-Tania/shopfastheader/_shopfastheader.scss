@@ -1,0 +1,10 @@
+.shopfast-xf-header { display: flex; align-items: center; gap: 2rem; padding: 1rem 2rem; border-bottom: 1px solid #cbd2d8; color: #182028; font-family: sans-serif; }
+header.experiencefragment:has(.shopfast-xf-header), header.experiencefragment:has(.shopfast-xf-header) .cmp-experiencefragment { margin: 0; padding: 0; border: 0; }
+.shopfast-xf-header__brand { color: #182028; font-weight: 700; letter-spacing: .08em; text-decoration: none; }
+.shopfast-xf-header nav, .shopfast-xf-header__nav .cmp-navigation__group { display: flex; align-self: stretch; gap: .35rem; margin: auto; padding: 0; list-style: none; font-size: .85rem; font-weight: 600; }
+.shopfast-xf-header__nav .cmp-navigation__item { display: grid; }
+.shopfast-xf-header__nav a, .shopfast-xf-header__nav .cmp-navigation__item-link { display: grid; place-items: center; padding: .25rem .8rem; color: #182028; text-decoration: none; }
+.shopfast-xf-header__nav a.is-active, .shopfast-xf-header__nav .cmp-navigation__item--active .cmp-navigation__item-link, .shopfast-xf-header__nav a:hover, .shopfast-xf-header__nav a:focus-visible { color: #2563eb; text-decoration: underline; text-underline-offset: .35rem; }
+.shopfast-xf-header__cart { border: 1px solid #9da7af; border-radius: 5px; background: #fff; color: #182028; cursor: pointer; padding: .65rem 1rem; font-weight: 600; }
+.shopfast-xf-header__cart span { display: inline-grid; min-width: 1.25rem; height: 1.25rem; margin-left: .3rem; place-items: center; border-radius: 50%; background: #182028; color: #fff; font-size: .7rem; }
+@media (max-width: 640px) { .shopfast-xf-header { flex-wrap: wrap; gap: 1rem; padding: .8rem 1rem; } .shopfast-xf-header nav { order: 3; flex-basis: 100%; justify-content: center; gap: 1.3rem; } }

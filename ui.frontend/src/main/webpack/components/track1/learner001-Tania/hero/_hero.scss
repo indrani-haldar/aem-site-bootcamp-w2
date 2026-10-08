@@ -1,0 +1,4 @@
+.hero { display: grid; min-height: 16rem; padding: 2rem; place-items: center; background-color: #182028; background-image: linear-gradient(rgb(24 32 40 / 44%), rgb(24 32 40 / 72%)), url('/content/dam/aem-site-bootcamp-w2/asset.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; color: #fff; text-align: center; }
+.hero__content { width: min(100%, 42rem); padding: 1.5rem 2rem; background: rgb(24 32 40 / 72%); }
+.hero__content h1, .hero__content p { margin: 0 0 1rem; }
+.hero__content .btn { display: inline-block; padding: .65rem 1rem; background: #fff; color: #182028; font-family: sans-serif; font-weight: 700; text-decoration: none; }

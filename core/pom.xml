@@ -43,7 +43,8 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-Import-Package: javax.annotation;version=0.0.0,*
+                            Import-Package: javax.annotation;version=0.0.0,*
+Export-Package: com.adobe.aem.bootcamp.core.track1.learner001.models;version=1.0
                                 ]]></bnd>
                         </configuration>
                     </execution>

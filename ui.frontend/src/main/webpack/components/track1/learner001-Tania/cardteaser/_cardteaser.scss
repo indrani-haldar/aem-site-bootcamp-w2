@@ -1,0 +1,7 @@
+.shopfast-card { overflow: hidden; border: 1px solid #aeb7be; border-radius: 5px; background: #fff; }
+.shopfast-card__image-wrap { display: grid; aspect-ratio: 1 / 1; place-items: center; background: repeating-linear-gradient(45deg, #f1f4f6, #f1f4f6 8px, #e5eaee 8px, #e5eaee 16px); }
+.shopfast-card__image-wrap img { width: 70%; height: 70%; object-fit: contain; mix-blend-mode: multiply; }
+.shopfast-card__body { display: grid; gap: .45rem; padding: .75rem; font-family: sans-serif; }
+.shopfast-card__body h2 { margin: 0; font-size: .85rem; line-height: 1.25; }
+.shopfast-card__body strong { font-size: .8rem; }
+.shopfast-card button { border: 0; border-radius: 5px; background: var(--ink); color: #fff; cursor: pointer; padding: .55rem; font: 600 .72rem sans-serif; }

@@ -1,0 +1,10 @@
+<section class="shopfast" data-shopfast-catalog="${properties.mode || 'shop'}">
+    <main class="shopfast__main">
+        <div class="shopfast__heading-row">
+            <h1>${properties.mode == 'featured' ? 'Featured Products' : 'All Products'}</h1>
+            <p class="shopfast__status" aria-live="polite">Loading products...</p>
+        </div>
+        <div class="shopfast__grid" data-product-grid></div>
+    </main>
+
+</section>

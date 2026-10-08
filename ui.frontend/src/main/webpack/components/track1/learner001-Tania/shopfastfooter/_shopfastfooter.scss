@@ -1,0 +1,8 @@
+.shopfast-xf-footer { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 1rem; padding: 1rem 2rem; border-top: 1px solid #cbd2d8; background: #f1f3f4; color: #182028; font: .72rem sans-serif; }
+footer.experiencefragment:has(.shopfast-xf-footer), footer.experiencefragment:has(.shopfast-xf-footer) .cmp-experiencefragment { margin: 0; padding: 0; border: 0; }
+.experiencefragment:has(.shopfast-xf-footer) + .aem-Grid-newComponent { display: none; }
+.shopfast-xf-footer div { display: grid; gap: .35rem; }
+.shopfast-xf-footer span { color: #6f7a83; font-size: .65rem; }
+.shopfast-xf-footer a { color: #182028; text-decoration: none; }
+.shopfast-xf-footer small { grid-column: 1 / -1; border-top: 1px dashed #cbd2d8; padding-top: .8rem; color: #6f7a83; }
+@media (max-width: 640px) { .shopfast-xf-footer { grid-template-columns: repeat(2, 1fr); padding: .8rem 1rem; } }

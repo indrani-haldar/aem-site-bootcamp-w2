@@ -1,0 +1,11 @@
+.shopfast { --ink: #182028; --muted: #6f7a83; --line: #cbd2d8; --soft: #f3f5f6; --accent: #2563eb; position: relative; color: var(--ink); background: #fff; font-family: Georgia, 'Times New Roman', serif; }
+.shopfast__main { padding: 1rem 2rem; }
+.shopfast__heading-row { display: flex; justify-content: space-between; align-items: baseline; }
+.shopfast__heading-row h1 { flex: 1; margin: 0 0 1.1rem; text-align: center; font-size: 1.1rem; }
+.shopfast__status { color: var(--muted); font: .75rem sans-serif; }
+.shopfast__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.shopfast__message { grid-column: 1 / -1; padding: 2rem; color: var(--muted); font: .9rem sans-serif; text-align: center; }
+.shopfast button:focus-visible, .shopfast a:focus-visible, .shopfast input:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+@media (max-width: 900px) { .shopfast__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .shopfast__main { padding: .8rem 1rem; } .shopfast__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; } }
+@media (max-width: 400px) { .shopfast__grid { grid-template-columns: 1fr; } }

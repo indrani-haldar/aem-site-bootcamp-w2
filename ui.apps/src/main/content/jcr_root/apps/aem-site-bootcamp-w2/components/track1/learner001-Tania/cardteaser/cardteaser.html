@@ -1,0 +1,10 @@
+<article class="shopfast-card" data-sly-use.model="com.adobe.aem.bootcamp.core.track1.learner001.models.CardTeaserModel">
+    <div class="shopfast-card__image-wrap" data-sly-test="${model.imagePath}"><img src="${model.imagePath @ context='uri'}" alt="${model.imageAlt @ context='attribute'}" loading="lazy"></div>
+    <div class="shopfast-card__image-wrap" data-sly-test="${!model.imagePath}" aria-hidden="true">Image</div>
+    <div class="shopfast-card__body">
+        <h2>${model.title}</h2>
+        <p data-sly-test="${model.description}">${model.description}</p>
+        <strong>${model.price}</strong>
+        <button type="button" data-add-product="${model.productId}" aria-label="Add ${model.title} to cart">Add to cart</button>
+    </div>
+</article>

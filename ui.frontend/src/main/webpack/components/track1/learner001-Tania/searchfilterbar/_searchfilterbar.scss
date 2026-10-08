@@ -1,0 +1,8 @@
+.shopfast__filters { display: flex; align-items: center; gap: 1rem; padding: 1rem 2rem; border-bottom: 1px solid var(--line); }
+.shopfast__search-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.shopfast__search { min-width: 250px; flex: 1; border: 1px solid #9da7af; border-radius: 5px; padding: .7rem 1rem; font: .9rem sans-serif; }
+.shopfast__categories { display: flex; flex-wrap: wrap; gap: .7rem; }
+.shopfast__category { border: 1px solid #aeb7be; border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer; padding: .55rem .95rem; font: 600 .75rem sans-serif; }
+.shopfast__category.is-active { background: var(--ink); color: #fff; }
+@media (max-width: 900px) { .shopfast__filters { align-items: stretch; flex-wrap: wrap; } .shopfast__search { flex-basis: 100%; } }
+@media (max-width: 640px) { .shopfast__filters { padding: .8rem 1rem; } .shopfast__categories { gap: .4rem; } .shopfast__category { padding: .5rem .7rem; } }
