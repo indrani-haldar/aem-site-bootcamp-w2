@@ -92,6 +92,11 @@ Export-Package: com.adobe.aem.bootcamp.core.track1.learner001.models;version=1.0
             <artifactId>aem-sdk-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.core</artifactId>
             <scope>test</scope>
